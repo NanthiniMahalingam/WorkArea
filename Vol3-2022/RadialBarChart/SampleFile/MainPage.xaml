@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:model="clr-namespace:SampleFile"
+             x:Class="SampleFile.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <chart:SfCircularChart  WidthRequest="650" HeightRequest="500">
+            <chart:SfCircularChart.Title>
+                <Label Text="RadialBarChart" HorizontalOptions="Center" FontSize="Medium" VerticalOptions="Center" TextColor="Black"  FontAttributes="Bold"></Label>
+            </chart:SfCircularChart.Title>
+                <chart:SfCircularChart.BindingContext>
+                <model:ViewModel></model:ViewModel>
+            </chart:SfCircularChart.BindingContext>
+            <chart:RadialBarSeries x:Name="radial" StrokeWidth="0.5"   TrackStrokeWidth="0.2"   ItemsSource="{Binding Data}" XBindingPath="Name" YBindingPath="Height">
+                <chart:RadialBarSeries.CenterView>
+
+                    <StackLayout Orientation="Vertical">
+                        <Label Text="Chart" FontAttributes="Bold" FontSize="Medium"></Label>
+                        <Image Source="C:\Users\NanthiniMahalingam\Desktop\testing\image.png" HeightRequest="100" WidthRequest="100" ></Image>
+                    </StackLayout>
+
+                </chart:RadialBarSeries.CenterView>
+            </chart:RadialBarSeries>
+        </chart:SfCircularChart >
+        <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="2">
+            <StackLayout Orientation="Horizontal">
+            <Button BackgroundColor="Green" WidthRequest="150" HeightRequest="50" Text="ItemSource" Clicked="Button_Clicked"></Button>
+
+            <Button BackgroundColor="Green" WidthRequest="150" HeightRequest="50" Text="PaletteBrushes" Clicked="Button_Clicked_2"></Button>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <Label Text="Radius :" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50" WidthRequest="150">
+                  
+                </Label>
+                <Entry Text="{Binding Source={Reference radius},Path=Value}" HeightRequest="50" ></Entry>
+            </StackLayout>
+            <Slider x:Name="radius" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Minimum="0.5" Maximum="1" Value="0.8" ValueChanged="Slider_ValueChanged_1"></Slider>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="StrokeBrush :" WidthRequest="150" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50"></Label>
+                <Picker  WidthRequest="150" HeightRequest="50" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Green</x:String>
+                        <x:String>Black</x:String>
+                        <x:String>Red</x:String>
+                        <x:String>DarkGray</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="StrokeWidth :" WidthRequest="150" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50"></Label>
+                <Entry Text="{Binding Source={Reference slider3},Path=Value}" HeightRequest="50"></Entry>
+            </StackLayout>
+          
+            <Slider x:Name="slider3" Minimum="0.1" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Maximum="2" Value="0.5" ValueChanged="slider_ValueChanged"></Slider>
+           
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="TrackStrokeBrush :" WidthRequest="150" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50"></Label>
+                <Picker  WidthRequest="150" HeightRequest="50" SelectedIndexChanged="Picker_SelectedIndexChanged_2">
+                    <Picker.Items>
+                        <x:String>Green</x:String>
+                        <x:String>Black</x:String>
+                        <x:String>Red</x:String>
+                        <x:String>DarkGray</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Grid.Column="2" Grid.Row="1">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="TrackStrokeWidth :" WidthRequest="150" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50"></Label>
+                    <Entry Text="{Binding Source={Reference slider},Path=Value}" HeightRequest="50"></Entry>
+                </StackLayout>
+                <Slider x:Name="slider" MinimumTrackColor="Red" MaximumTrackColor="Orange"   Minimum="0.1" Maximum="1" Value="0.5" ValueChanged="slider_ValueChanged_2"></Slider>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Gap :"  WidthRequest="150" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50"></Label>
+                    <Entry Text="{Binding Source={Reference slider1},Path=Value}" HeightRequest="50"></Entry>
+                </StackLayout>
+                <Slider x:Name="slider1" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Minimum="0.1" Maximum="1" Value="0.5" ValueChanged="slider1_ValueChanged"></Slider>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="MaximumValue :"  WidthRequest="150" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50"></Label>
+                    <Picker  WidthRequest="150" HeightRequest="50" SelectedIndexChanged="Picker_SelectedIndexChanged_1">
+                        <Picker.Items>
+                            <x:String>100</x:String>
+                            <x:String>200</x:String>
+                            <x:String>500</x:String>
+                            <x:String>1000</x:String>
+                         
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Padding="4" >
+                        <Button Text="StartCurve" BackgroundColor="Green" HeightRequest="50" WidthRequest="100" Clicked="Button_Clicked_1"></Button>
+                        <Button Text="EndCurve" BackgroundColor="Green" HeightRequest="50" WidthRequest="100" Clicked="Button_Clicked_3" ></Button>
+
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Padding="4">
+                        <Button Text="BothCurve" BackgroundColor="Green" HeightRequest="50" WidthRequest="100" Clicked="Button_Clicked_4" ></Button>
+                        <Button Text="BothFlat" BackgroundColor="Green" HeightRequest="50" WidthRequest="100" Clicked="Button_Clicked_5" ></Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>
