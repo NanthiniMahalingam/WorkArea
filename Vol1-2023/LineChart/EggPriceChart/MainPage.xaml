@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EggPriceChart"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             x:Class="EggPriceChart.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:AverageEggPrices/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Border Stroke="black" Margin="10" StrokeThickness="2" Padding="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="0" />
+            </Border.StrokeShape>
+            <chart:SfCartesianChart Margin="5">
+                <chart:SfCartesianChart.Title>
+                    <Grid HeightRequest="100">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.7*"/>
+                            <RowDefinition Height="0.3*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Margin="3" Text="Surge in Egg Price" HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               FontAttributes="Bold" TextColor="Black" FontSize="45" />
+                        <Label Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                               Text="2022 rise of avg price for grade A dozon eggs in the U.S." 
+                               TextColor="Black" FontAttributes="Bold" FontSize="20" />
+                    </Grid>
+                </chart:SfCartesianChart.Title>
+                <chart:SfCartesianChart.XAxes>
+                    <chart:DateTimeAxis ShowMajorGridLines="False"
+                                        EdgeLabelsDrawingMode="Fit">
+                        <chart:DateTimeAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="MMM"
+                                                       TextColor="Black" 
+                                                       FontAttributes="Bold" />
+                        </chart:DateTimeAxis.LabelStyle>
+                        <chart:DateTimeAxis.MajorTickStyle>
+                            <chart:ChartAxisTickStyle Stroke="GhostWhite" />
+                        </chart:DateTimeAxis.MajorTickStyle>
+                    </chart:DateTimeAxis>
+                </chart:SfCartesianChart.XAxes>
+                <chart:SfCartesianChart.YAxes>
+                    <chart:NumericalAxis>
+                        <chart:NumericalAxis.Title>
+                            <chart:ChartAxisTitle TextColor="Black"
+                                                  FontAttributes="Bold" 
+                                                  Text="Average Price USD">
+                            </chart:ChartAxisTitle>
+                        </chart:NumericalAxis.Title>
+                        <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle LabelFormat="$###.##"
+                                                       TextColor="Black" 
+                                                       FontAttributes="Bold" />
+                        </chart:NumericalAxis.LabelStyle>
+                        <chart:NumericalAxis.AxisLineStyle>
+                            <chart:ChartLineStyle Stroke="GhostWhite" />
+                        </chart:NumericalAxis.AxisLineStyle>
+                        <chart:NumericalAxis.MajorTickStyle>
+                            <chart:ChartAxisTickStyle Stroke="GhostWhite" />
+                        </chart:NumericalAxis.MajorTickStyle>
+                    </chart:NumericalAxis>
+                </chart:SfCartesianChart.YAxes>
+                <chart:SfCartesianChart.PlotAreaBackgroundView>
+                    <AbsoluteLayout>
+                        <AbsoluteLayout.Background>
+                            <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
+                                <GradientStop Color="White" Offset="0.0" />
+                                <GradientStop Color="#516db7" Offset="1" />
+                            </LinearGradientBrush>
+                        </AbsoluteLayout.Background>
+                        <Label LineBreakMode="WordWrap" Margin="10" Opacity="0.6" WidthRequest="500" Text="The U.S. national average price for a dozen grade A eggs hit $4.25 in December 2022, the highest it's ever been. This 120% increase since the start of the year is mostly due to an avian influenza outbreak." 
+                               FontSize="15" AbsoluteLayout.LayoutBounds="0,0.1,-1,-1"
+			 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                    </AbsoluteLayout>
+                </chart:SfCartesianChart.PlotAreaBackgroundView>
+                <chart:LineSeries x:Name="series" Fill="#e19620" StrokeWidth="5" StrokeDashArray="2,3,3"
+                                  XBindingPath="Month" YBindingPath="AveragePrice" ShowMarkers="True"
+                                  ItemsSource="{Binding AveragePrices}">
+                    <chart:LineSeries.MarkerSettings>
+
+                        <chart:ChartMarkerSettings Height="20" Width="20" Fill="white" Type="Circle" 
+                                                   Stroke="black" StrokeWidth="2" >
+                            
+                        </chart:ChartMarkerSettings>
+                    </chart:LineSeries.MarkerSettings>
+                </chart:LineSeries>
+
+            </chart:SfCartesianChart>
+        </Border>
+    </ContentPage.Content>
+</ContentPage>
