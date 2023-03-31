@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             xmlns:local="clr-namespace:U.S.AverageInflation"
+             x:Class="U.S.AverageInflation.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:AverageInflationPercentage/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Border Stroke="Gray" Margin="10" StrokeThickness="2">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*" />
+                    <RowDefinition Height="4*"/>
+                </Grid.RowDefinitions>
+                <chart:SfCartesianChart Margin="5" Grid.Row="0">
+                    <chart:SfCartesianChart.Title>
+                        <Label Text="U.S Average Inflation" FontAttributes="Bold" VerticalOptions="CenterAndExpand"
+                               FontSize="35" HorizontalOptions="StartAndExpand" />
+                    </chart:SfCartesianChart.Title>
+
+                    <chart:SfCartesianChart.XAxes>
+                        <chart:DateTimeAxis ShowMajorGridLines="False" >
+                            <chart:DateTimeAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle FontAttributes="Bold" />
+                            </chart:DateTimeAxis.LabelStyle>
+                            <chart:DateTimeAxis.AxisLineStyle>
+                                <chart:ChartLineStyle Stroke="Transparent" />
+                            </chart:DateTimeAxis.AxisLineStyle>
+                            <chart:DateTimeAxis.MajorTickStyle>
+                                <chart:ChartAxisTickStyle Stroke="Transparent" />
+                            </chart:DateTimeAxis.MajorTickStyle>
+                        </chart:DateTimeAxis>
+                    </chart:SfCartesianChart.XAxes>
+                    <chart:SfCartesianChart.YAxes>
+                        <chart:NumericalAxis  ShowMajorGridLines="False">
+                            <chart:NumericalAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle LabelFormat="0'%" />
+                            </chart:NumericalAxis.LabelStyle>
+                            <chart:NumericalAxis.AxisLineStyle>
+                                <chart:ChartLineStyle Stroke="Transparent" />
+                            </chart:NumericalAxis.AxisLineStyle>
+                            <chart:NumericalAxis.MajorTickStyle>
+                                <chart:ChartAxisTickStyle Stroke="Transparent" />
+                            </chart:NumericalAxis.MajorTickStyle>
+                        </chart:NumericalAxis>
+                    </chart:SfCartesianChart.YAxes>
+                    <!--<chart:SfCartesianChart.ZoomPanBehavior>
+                        <chart:ChartZoomPanBehavior EnablePanning="True" EnablePinchZooming="True" ZoomMode="XY" />
+                    </chart:SfCartesianChart.ZoomPanBehavior>
+
+                    <chart:SfCartesianChart.TrackballBehavior>
+                        <chart:ChartTrackballBehavior ShowLine="True"  ShowMarkers="True"/>
+                    </chart:SfCartesianChart.TrackballBehavior>-->
+
+                    <chart:SfCartesianChart.PlotAreaBackgroundView >
+                        <Frame BorderColor="Black" >
+                        </Frame>
+                    </chart:SfCartesianChart.PlotAreaBackgroundView>
+                    <chart:SplineAreaSeries ShowDataLabels="False"  ItemsSource="{Binding PositiveAveragePercentage}"
+                                      Fill="Green"
+                                         XBindingPath="Year" YBindingPath="AveragePercentage" >
+                        <chart:SplineAreaSeries.DataLabelSettings>
+                            <chart:CartesianDataLabelSettings LabelPlacement="Outer" />
+                        </chart:SplineAreaSeries.DataLabelSettings>
+                    </chart:SplineAreaSeries>
+                </chart:SfCartesianChart>
+                <chart:SfCartesianChart Margin="5" Grid.Row="1">
+                    <chart:SfCartesianChart.XAxes>
+                        <chart:DateTimeAxis IntervalType="Years" 
+                                            IsVisible="False" ShowMajorGridLines="False" Interval="5" >
+                            <chart:DateTimeAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle FontAttributes="Bold" />
+                            </chart:DateTimeAxis.LabelStyle>
+                            <chart:DateTimeAxis.AxisLineStyle>
+                                <chart:ChartLineStyle Stroke="Transparent" />
+                            </chart:DateTimeAxis.AxisLineStyle>
+                            <chart:DateTimeAxis.MajorTickStyle>
+                                <chart:ChartAxisTickStyle Stroke="Transparent" />
+                            </chart:DateTimeAxis.MajorTickStyle>
+                        </chart:DateTimeAxis>
+                    </chart:SfCartesianChart.XAxes>
+                    <chart:SfCartesianChart.YAxes>
+                        <chart:NumericalAxis  Interval="0.1" Minimum="-0.6" Maximum="0" ShowMajorGridLines="False">
+                            <chart:NumericalAxis.LabelStyle>
+                                <chart:ChartAxisLabelStyle  LabelFormat="0'%" />
+                            </chart:NumericalAxis.LabelStyle>
+                            <chart:NumericalAxis.AxisLineStyle>
+                                <chart:ChartLineStyle Stroke="Transparent" />
+                            </chart:NumericalAxis.AxisLineStyle>
+                            <chart:NumericalAxis.MajorTickStyle>
+                                <chart:ChartAxisTickStyle Stroke="Transparent" />
+                            </chart:NumericalAxis.MajorTickStyle>
+                        </chart:NumericalAxis>
+                    </chart:SfCartesianChart.YAxes>
+                    <chart:SfCartesianChart.PlotAreaBackgroundView >
+                        <Frame BorderColor="Black" >
+                        </Frame>
+                    </chart:SfCartesianChart.PlotAreaBackgroundView>
+                    <chart:SplineAreaSeries  ShowDataLabels="False"
+                                      ItemsSource="{Binding NegativeAveragePercentage}"
+                                     Fill="Orange"
+                                      XBindingPath="Year" YBindingPath="AveragePercentage" >
+                    </chart:SplineAreaSeries>
+                </chart:SfCartesianChart>
+            </Grid>
+        </Border>
+    </ContentPage.Content>
+</ContentPage>
