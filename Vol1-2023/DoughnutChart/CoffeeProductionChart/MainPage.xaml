@@ -48,17 +48,20 @@
                             </Border.StrokeShape>
 
                             <StackLayout Orientation="Vertical">
-                                <Label  FontSize="14" FontAttributes="Bold" Text="{Binding Country,Source={x:Reference coffeeProduction}}"
+                                <Label  FontSize="{OnPlatform WinUI='14',iOS='12',MacCatalyst='14',Android='12'}" 
+                                        FontAttributes="Bold" Text="{Binding Country,Source={x:Reference coffeeProduction}}"
                                         HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="EndAndExpand" TextColor="Black" />
-                                <Label FontSize="14" Margin="4" FontAttributes="Bold" 
+                                <Label FontSize="{OnPlatform WinUI='14',iOS='12',MacCatalyst='14',Android='12'}"
+                                       Margin="{OnPlatform WinUI='4',MacCatalyst='3',iOS='2',Android='2'}" FontAttributes="Bold" 
                                        Text="{Binding Production,Source={x:Reference coffeeProduction},StringFormat='{0}M'}" 
                                        HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="CenterAndExpand"  TextColor="Black" />
-                                <Label  FontSize="14" FontAttributes="Bold"
+                                <Label  FontSize="{OnPlatform WinUI='14',iOS='12',MacCatalyst='14',Android='12'}"
+                                        FontAttributes="Bold"
                                         Text="{Binding Percentage,Source={x:Reference coffeeProduction},StringFormat='{0:P0}'}"
                                         HorizontalOptions="CenterAndExpand"
-                                   VerticalOptions="StartAndExpand" Margin="4"
+                                   VerticalOptions="StartAndExpand"  Margin="{OnPlatform WinUI='4',MacCatalyst='3',iOS='2',Android='2'}"
                                         TextColor="Black"/>
                             </StackLayout>
                         </Border>
