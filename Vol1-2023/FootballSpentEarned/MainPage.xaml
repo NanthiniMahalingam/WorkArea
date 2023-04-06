@@ -82,7 +82,7 @@
         </DataTemplate>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Border Margin="10" Stroke="LightGray" StrokeThickness="2">
+        <Border Margin="10,20,10,10" Stroke="LightGray" StrokeThickness="2">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="8" />
             </Border.StrokeShape>

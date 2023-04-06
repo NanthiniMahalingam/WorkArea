@@ -1,14 +1,12 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Reflection;
-using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using Newtonsoft.Json;
 
 namespace FootballSpentEarned
 {
-   
-public class FootballRevenue : INotifyPropertyChanged
+
+    public class FootballRevenue : INotifyPropertyChanged
     {
         private List<FootballMarket> premierLeague;
         public List<FootballMarket> PremierLeague
@@ -75,32 +73,26 @@ public class FootballRevenue : INotifyPropertyChanged
         public FootballRevenue()
         {
             Assembly executingAssembly = typeof(App).GetTypeInfo().Assembly;
-            
-           // Assembly executingAssembly1 = typeof(App).GetTypeInfo().Assembly;
             Stream inputStream1 = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.Raw.premierleague.json");
             using StreamReader reader1 = new StreamReader(inputStream1);
             var data1 = reader1.ReadToEnd();
             PremierLeague = JsonConvert.DeserializeObject<List<FootballMarket>>(data1);
 
-            //Assembly executingAssembly2 = typeof(App).GetTypeInfo().Assembly;
             Stream inputStream2 = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.Raw.liga.json");
             using StreamReader reader2 = new StreamReader(inputStream2);
             var data2 = reader2.ReadToEnd();
             Liga = JsonConvert.DeserializeObject<List<FootballMarket>>(data2);
 
-           // Assembly executingAssembly3 = typeof(App).GetTypeInfo().Assembly;
             Stream inputStream3 = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.Raw.ligue1.json");
             using StreamReader reader3 = new StreamReader(inputStream3);
             var data3 = reader3.ReadToEnd();
             Ligue1 = JsonConvert.DeserializeObject<List<FootballMarket>>(data3);
 
-            //Assembly executingAssembly4 = typeof(App).GetTypeInfo().Assembly;
             Stream inputStream4 = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.Raw.bundesliga.json");
             using StreamReader reader4 = new StreamReader(inputStream4);
             var data4 = reader4.ReadToEnd();
             Bundesliga = JsonConvert.DeserializeObject<List<FootballMarket>>(data4);
 
-           // Assembly executingAssembly5 = typeof(App).GetTypeInfo().Assembly;
             Stream inputStream5 = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.Raw.seriea.json");
             using StreamReader reader5 = new StreamReader(inputStream5);
             var data5 = reader5.ReadToEnd();
