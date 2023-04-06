@@ -1,0 +1,208 @@
+[
+  {
+    "club_tm": 46,
+    "club": "Internazionale",
+    "leagueCode": "ITA",
+    "spent": 664,
+    "earned": 278,
+    "net": -386,
+    "net_neg": 386,
+    "net_pos": 0
+  },
+
+  {
+    "club_tm": 5,
+    "club": "Milan AC",
+    "leagueCode": "ITA",
+    "spent": 577,
+    "earned": 266,
+    "net": -311,
+    "net_neg": 311,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 506,
+    "club": "Juventus FC",
+    "leagueCode": "ITA",
+    "spent": 999,
+    "earned": 750,
+    "net": -249,
+    "net_neg": 249,
+    "net_pos": 0
+  },
+
+  {
+    "club_tm": 6195,
+    "club": "SSC Napoli",
+    "leagueCode": "ITA",
+    "spent": 565,
+    "earned": 400,
+    "net": -165,
+    "net_neg": 165,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 130,
+    "club": "Parma Calcio",
+    "leagueCode": "ITA",
+    "spent": 170,
+    "earned": 12,
+    "net": -158,
+    "net_neg": 158,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 1390,
+    "club": "Cagliari Calcio",
+    "leagueCode": "ITA",
+    "spent": 158,
+    "earned": 89,
+    "net": -69,
+    "net_neg": 69,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 1025,
+    "club": "Bologna FC",
+    "leagueCode": "ITA",
+    "spent": 144,
+    "earned": 82,
+    "net": -62,
+    "net_neg": 62,
+    "net_pos": 0
+  },
+
+  {
+    "club_tm": 4171,
+    "club": "Benevento Calcio",
+    "leagueCode": "ITA",
+    "spent": 55,
+    "earned": 15,
+    "net": -40,
+    "net_neg": 40,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 430,
+    "club": "ACF Fiorentina",
+    "leagueCode": "ITA",
+    "spent": 285,
+    "earned": 249,
+    "net": -36,
+    "net_neg": 36,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 398,
+    "club": "SS Lazio",
+    "leagueCode": "ITA",
+    "spent": 213,
+    "earned": 189,
+    "net": -24,
+    "net_neg": 24,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 416,
+    "club": "Torino FC",
+    "leagueCode": "ITA",
+    "spent": 207,
+    "earned": 199,
+    "net": -8,
+    "net_neg": 8,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 4083,
+    "club": "FC Crotone",
+    "leagueCode": "ITA",
+    "spent": 25,
+    "earned": 19,
+    "net": -6,
+    "net_neg": 6,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 3522,
+    "club": "Spezia Calcio",
+    "leagueCode": "ITA",
+    "spent": 12,
+    "earned": 20,
+    "net": 8,
+    "net_neg": 0,
+    "net_pos": 8
+  },
+  {
+    "club_tm": 6574,
+    "club": "US Sassuolo",
+    "leagueCode": "ITA",
+    "spent": 187,
+    "earned": 216,
+    "net": 29,
+    "net_neg": 0,
+    "net_pos": 29
+  },
+  
+  {
+    "club_tm": 12,
+    "club": "AS Roma",
+    "leagueCode": "ITA",
+    "spent": 537,
+    "earned": 571,
+    "net": 34,
+    "net_neg": 0,
+    "net_pos": 34
+  },
+  {
+    "club_tm": 276,
+    "club": "Hellas Verona",
+    "leagueCode": "ITA",
+    "spent": 52,
+    "earned": 103,
+    "net": 51,
+    "net_neg": 0,
+    "net_pos": 51
+  },
+  {
+    "club_tm": 410,
+    "club": "Udinese Calcio",
+    "leagueCode": "ITA",
+    "spent": 118,
+    "earned": 177,
+    "net": 59,
+    "net_neg": 0,
+    "net_pos": 59
+  },
+  
+  {
+    "club_tm": 252,
+    "club": "Genoa CFC",
+    "leagueCode": "ITA",
+    "spent": 181,
+    "earned": 256,
+    "net": 75,
+    "net_neg": 0,
+    "net_pos": 75
+  },
+  {
+    "club_tm": 1038,
+    "club": "Sampdoria UC",
+    "leagueCode": "ITA",
+    "spent": 248,
+    "earned": 324,
+    "net": 76,
+    "net_neg": 0,
+    "net_pos": 76
+  },
+  
+  {
+    "club_tm": 800,
+    "club": "Atalanta BC",
+    "leagueCode": "ITA",
+    "spent": 241,
+    "earned": 374,
+    "net": 133,
+    "net_neg": 0,
+    "net_pos": 133
+  }
+]

@@ -1,0 +1,216 @@
+[
+  {
+    "club_tm": 583,
+    "club": "Paris St-Germain",
+    "leagueCode": "FRA",
+    "spent": 854,
+    "earned": 399,
+    "net": -455,
+    "net_neg": 455,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 244,
+    "club": "Olympique Marseille",
+    "leagueCode": "FRA",
+    "spent": 248,
+    "earned": 177,
+    "net": -71,
+    "net_neg": 71,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 995,
+    "club": "FC Nantes",
+    "leagueCode": "FRA",
+    "spent": 63,
+    "earned": 58,
+    "net": -5,
+    "net_neg": 5,
+    "net_pos": 0
+  },
+ 
+  {
+    "club_tm": 1160,
+    "club": "N�mes Olympique",
+    "leagueCode": "FRA",
+    "spent": 26,
+    "earned": 25,
+    "net": -1,
+    "net_neg": 1,
+    "net_pos": 0
+  },
+ 
+  {
+    "club_tm": 3911,
+    "club": "Stade Brestois",
+    "leagueCode": "FRA",
+    "spent": 28,
+    "earned": 30,
+    "net": 2,
+    "net_neg": 0,
+    "net_pos": 2
+  },
+ 
+  {
+    "club_tm": 273,
+    "club": "Stade Rennais",
+    "leagueCode": "FRA",
+    "spent": 221,
+    "earned": 224,
+    "net": 3,
+    "net_neg": 0,
+    "net_pos": 3
+  },
+ 
+  {
+    "club_tm": 667,
+    "club": "RC Strasbourg",
+    "leagueCode": "FRA",
+    "spent": 38,
+    "earned": 42,
+    "net": 4,
+    "net_neg": 0,
+    "net_pos": 4
+  },
+  
+  {
+    "club_tm": 347,
+    "club": "FC Metz",
+    "leagueCode": "FRA",
+    "spent": 46,
+    "earned": 52,
+    "net": 6,
+    "net_neg": 0,
+    "net_pos": 6
+  },
+ 
+  {
+    "club_tm": 826,
+    "club": "RC Lens",
+    "leagueCode": "FRA",
+    "spent": 38,
+    "earned": 52,
+    "net": 14,
+    "net_neg": 0,
+    "net_pos": 14
+  },
+ 
+  {
+    "club_tm": 417,
+    "club": "OGC Nice",
+    "leagueCode": "FRA",
+    "spent": 157,
+    "earned": 173,
+    "net": 16,
+    "net_neg": 0,
+    "net_pos": 16
+  },
+  
+  {
+    "club_tm": 1421,
+    "club": "Stade de Reims",
+    "leagueCode": "FRA",
+    "spent": 58,
+    "earned": 77,
+    "net": 19,
+    "net_neg": 0,
+    "net_pos": 19
+  },
+  {
+    "club_tm": 2969,
+    "club": "Dijon FCO",
+    "leagueCode": "FRA",
+    "spent": 46,
+    "earned": 72,
+    "net": 26,
+    "net_neg": 0,
+    "net_pos": 26
+  },
+  {
+    "club_tm": 1420,
+    "club": "Angers SCO",
+    "leagueCode": "FRA",
+    "spent": 52,
+    "earned": 80,
+    "net": 28,
+    "net_neg": 0,
+    "net_pos": 28
+  },
+ 
+  {
+    "club_tm": 1158,
+    "club": "FC Lorient",
+    "leagueCode": "FRA",
+    "spent": 54,
+    "earned": 91,
+    "net": 37,
+    "net_neg": 0,
+    "net_pos": 37
+  },
+  
+  {
+    "club_tm": 969,
+    "club": "Montpellier HSC",
+    "leagueCode": "FRA",
+    "spent": 63,
+    "earned": 123,
+    "net": 60,
+    "net_neg": 0,
+    "net_pos": 60
+  },
+ 
+  {
+    "club_tm": 40,
+    "club": "Girondins Bordeaux",
+    "leagueCode": "FRA",
+    "spent": 90,
+    "earned": 156,
+    "net": 66,
+    "net_neg": 0,
+    "net_pos": 66
+  },
+ 
+  {
+    "club_tm": 618,
+    "club": "AS St-Etienne",
+    "leagueCode": "FRA",
+    "spent": 68,
+    "earned": 146,
+    "net": 78,
+    "net_neg": 0,
+    "net_pos": 78
+  },
+ 
+  {
+    "club_tm": 162,
+    "club": "AS Monaco",
+    "leagueCode": "FRA",
+    "spent": 626,
+    "earned": 758,
+    "net": 132,
+    "net_neg": 0,
+    "net_pos": 132
+  },
+ 
+  {
+    "club_tm": 1041,
+    "club": "Olympique Lyonnais",
+    "leagueCode": "FRA",
+    "spent": 348,
+    "earned": 499,
+    "net": 151,
+    "net_neg": 0,
+    "net_pos": 151
+  },
+  {
+    "club_tm": 1082,
+    "club": "LOSC Lille",
+    "leagueCode": "FRA",
+    "spent": 252,
+    "earned": 443,
+    "net": 191,
+    "net_neg": 0,
+    "net_pos": 191
+  }
+]

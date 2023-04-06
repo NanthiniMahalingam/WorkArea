@@ -12,7 +12,7 @@
         <local:CornerRadiusConverter x:Key="innerRadiusConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Border Stroke="LightGray" Margin="10" Padding="10" StrokeThickness="1">
+        <Border Stroke="LightGray" Margin="10,30,10,10" Padding="10" StrokeThickness="1">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30" />
             </Border.StrokeShape>
@@ -31,7 +31,7 @@
                     </Grid>
                 </chart:SfCircularChart.Title>
                 <chart:SfCircularChart.Legend>
-                    <chart:ChartLegend>
+                    <chart:ChartLegend  >
                     </chart:ChartLegend>
                 </chart:SfCircularChart.Legend>
                 <chart:DoughnutSeries ShowDataLabels="True" x:Name="series" StartAngle="0" EndAngle="360"
@@ -42,7 +42,7 @@
                     <chart:DoughnutSeries.CenterView>
                         <Border x:Name="border" HeightRequest="{Binding CenterHoleSize,Converter={StaticResource innerRadiusConverter},Source={x:Reference series}}" 
                                 WidthRequest="{Binding CenterHoleSize,Converter={StaticResource innerRadiusConverter},Source={x:Reference series}}"
-                              Stroke="Transparent"   >
+                              Stroke="Transparent" >
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="{Binding CenterHoleSize}"/>
                             </Border.StrokeShape>
