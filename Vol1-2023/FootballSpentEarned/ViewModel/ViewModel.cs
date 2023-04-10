@@ -1,12 +1,9 @@
-﻿using System.ComponentModel;
-using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System.Reflection;
 using Newtonsoft.Json;
 
 namespace FootballSpentEarned
 {
-
-    public class FootballRevenue : INotifyPropertyChanged
+    public class FootballRevenue
     {
         private List<FootballMarket> premierLeague;
         public List<FootballMarket> PremierLeague
@@ -15,18 +12,6 @@ namespace FootballSpentEarned
             set
             {
                 premierLeague = value;
-                NotifyPropertyChanged(nameof(PremierLeague));
-            }
-        }
-
-        private List<FootballMarket> data;
-        public List<FootballMarket> Data
-        {
-            get { return data; }
-            set
-            {
-                data = value;
-                NotifyPropertyChanged(nameof(Data));
             }
         }
 
@@ -37,7 +22,6 @@ namespace FootballSpentEarned
             set
             {
                 liga = value;
-                NotifyPropertyChanged(nameof(Liga));
             }
         }
         private List<FootballMarket> ligue1;
@@ -47,7 +31,6 @@ namespace FootballSpentEarned
             set
             {
                 ligue1 = value;
-                NotifyPropertyChanged(nameof(Ligue1));
             }
         }
         private List<FootballMarket> bundesliga;
@@ -57,7 +40,6 @@ namespace FootballSpentEarned
             set
             {
                 bundesliga = value;
-                NotifyPropertyChanged(nameof(Bundesliga));
             }
         }
         private List<FootballMarket> serieA;
@@ -67,7 +49,6 @@ namespace FootballSpentEarned
             set
             {
                 serieA = value;
-                NotifyPropertyChanged(nameof(SerieA));
             }
         }
         public FootballRevenue()
@@ -98,13 +79,6 @@ namespace FootballSpentEarned
             var data5 = reader5.ReadToEnd();
             serieA = JsonConvert.DeserializeObject<List<FootballMarket>>(data5);
         }
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
     }
-
-
 }
 

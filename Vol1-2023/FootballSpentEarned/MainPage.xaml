@@ -10,8 +10,7 @@
   </ContentPage.BindingContext>
 
     <ContentPage.Resources>
-        <local:BrushToColorConverter x:Key="brushToColor" />
-        <DataTemplate x:Key="legendTemplate">
+      <DataTemplate x:Key="legendTemplate">
             <HorizontalStackLayout Margin="5,0,0,0">
                 <Rectangle HeightRequest="10" WidthRequest="10" Fill="{Binding IconBrush}" />
                 <Label Text="{Binding Item.Label}" Margin="10,0,0,0" FontSize="12" TextColor="Black" />
@@ -119,7 +118,6 @@
                             <chart:ChartAxisTickStyle Stroke="Black" StrokeWidth="1.5" />
                         </chart:NumericalAxis.MajorTickStyle>
                     </chart:NumericalAxis>
-
                 </chart:SfCartesianChart.XAxes>
                 <chart:SfCartesianChart.YAxes>
                     <chart:NumericalAxis Minimum="0" EdgeLabelsVisibilityMode="AlwaysVisible" EdgeLabelsDrawingMode="Fit"
@@ -140,10 +138,8 @@
                 </chart:SfCartesianChart.YAxes>
                 <chart:SfCartesianChart.PlotAreaBackgroundView>
                     <Frame BorderColor="Black" IsClippedToBounds="False" CornerRadius="0" >
-
                     </Frame>
                 </chart:SfCartesianChart.PlotAreaBackgroundView>
-
                 <chart:SfCartesianChart.Legend>
                     <chart:ChartLegend Placement="Right" ItemTemplate="{StaticResource legendTemplate}" />
                 </chart:SfCartesianChart.Legend>
