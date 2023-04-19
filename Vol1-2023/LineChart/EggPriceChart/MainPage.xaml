@@ -15,46 +15,54 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="0" />
             </Border.StrokeShape>
-            <chart:SfCartesianChart Margin="5">
+            <chart:SfCartesianChart >
                 <chart:SfCartesianChart.Title>
                     <Grid HeightRequest="100">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="0.7*"/>
                             <RowDefinition Height="0.3*"/>
                         </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Margin="3" Text="Surge in Egg Price" HorizontalOptions="CenterAndExpand"
+                        <Label Grid.Row="0" Margin="3" Text="Average Egg Price Surges" HorizontalOptions="StartAndExpand"
                                VerticalOptions="CenterAndExpand"
-                               FontAttributes="Bold" TextColor="Black" FontSize="45" />
-                        <Label Grid.Row="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                               Text="2022 rise of avg price for grade A dozon eggs in the U.S." 
+                               FontAttributes="Bold" TextColor="Black" FontSize="Header" />
+                        <Label Grid.Row="1" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"
+                               Text="The average price for a dozen grade A eggs in the U.S. is expected to rise in 2022" 
                                TextColor="Black" FontAttributes="Bold" FontSize="20" />
                     </Grid>
                 </chart:SfCartesianChart.Title>
                 <chart:SfCartesianChart.XAxes>
-                    <chart:DateTimeAxis ShowMajorGridLines="False"
+                    <chart:DateTimeAxis ShowMajorGridLines="False" 
+                                        IntervalType="Months" Interval="1" 
                                         EdgeLabelsDrawingMode="Fit">
+                        <chart:DateTimeAxis.Title>
+                            <chart:ChartAxisTitle TextColor="Black"
+                                                   FontSize="14"
+                                                  Text="Month">
+                            </chart:ChartAxisTitle>
+                        </chart:DateTimeAxis.Title>
                         <chart:DateTimeAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle LabelFormat="MMM"
-                                                       TextColor="Black" 
-                                                       FontAttributes="Bold" />
+                            <chart:ChartAxisLabelStyle LabelFormat="MMM" FontSize="13"
+                                                       TextColor="Black"  />
                         </chart:DateTimeAxis.LabelStyle>
+                        <chart:DateTimeAxis.AxisLineStyle>
+                            <chart:ChartLineStyle Stroke="GhostWhite" />
+                        </chart:DateTimeAxis.AxisLineStyle>
                         <chart:DateTimeAxis.MajorTickStyle>
                             <chart:ChartAxisTickStyle Stroke="GhostWhite" />
                         </chart:DateTimeAxis.MajorTickStyle>
                     </chart:DateTimeAxis>
                 </chart:SfCartesianChart.XAxes>
                 <chart:SfCartesianChart.YAxes>
-                    <chart:NumericalAxis>
+                    <chart:NumericalAxis  Minimum="1.5"  Maximum="5">
                         <chart:NumericalAxis.Title>
                             <chart:ChartAxisTitle TextColor="Black"
-                                                  FontAttributes="Bold" 
-                                                  Text="Average Price USD">
+                                                   FontSize="14"
+                                                  Text="Price USD">
                             </chart:ChartAxisTitle>
                         </chart:NumericalAxis.Title>
                         <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle LabelFormat="$###.##"
-                                                       TextColor="Black" 
-                                                       FontAttributes="Bold" />
+                            <chart:ChartAxisLabelStyle LabelFormat="$###.##" FontSize="13"
+                                                       TextColor="Black"  />
                         </chart:NumericalAxis.LabelStyle>
                         <chart:NumericalAxis.AxisLineStyle>
                             <chart:ChartLineStyle Stroke="GhostWhite" />
@@ -65,28 +73,30 @@
                     </chart:NumericalAxis>
                 </chart:SfCartesianChart.YAxes>
                 <chart:SfCartesianChart.PlotAreaBackgroundView>
-                    <AbsoluteLayout>
-                        <AbsoluteLayout.Background>
-                            <LinearGradientBrush StartPoint="0.3,0" EndPoint="0.7,1">
-                                <GradientStop Color="White" Offset="0.0" />
-                                <GradientStop Color="#516db7" Offset="1" />
-                            </LinearGradientBrush>
-                        </AbsoluteLayout.Background>
-                        <Label LineBreakMode="WordWrap" Margin="10" Opacity="0.6" WidthRequest="500" Text="The U.S. national average price for a dozen grade A eggs hit $4.25 in December 2022, the highest it's ever been. This 120% increase since the start of the year is mostly due to an avian influenza outbreak." 
-                               FontSize="15" AbsoluteLayout.LayoutBounds="0,0.1,-1,-1"
+                    <AbsoluteLayout BackgroundColor="#c8e1f7">
+                        <Label LineBreakMode="WordWrap" Margin="10" TextColor="Gray"
+                               WidthRequest="{OnPlatform Android='300',WinUI='500',iOS='300',MacCatalyst='500'}" 
+                               Text="A few years ago, Avian flu caused egg prices to rise by 40% within nine months. By September 2015, the price of a dozen eggs had increased to $2.97." 
+                               FontSize="{OnPlatform WinUI='13',Android='10',MacCatalyst='13',iOS='10'}" 
+                               AbsoluteLayout.LayoutBounds="0,0.04,-1,-1"
 			 AbsoluteLayout.LayoutFlags="PositionProportional"/>
                     </AbsoluteLayout>
                 </chart:SfCartesianChart.PlotAreaBackgroundView>
                 <chart:LineSeries x:Name="series" Fill="#e19620" StrokeWidth="5" StrokeDashArray="2,3,3"
                                   XBindingPath="Month" YBindingPath="AveragePrice" ShowMarkers="True"
-                                  ItemsSource="{Binding AveragePrices}">
+                                  ShowDataLabels="True" ItemsSource="{Binding AveragePrices}">
                     <chart:LineSeries.MarkerSettings>
-
-                        <chart:ChartMarkerSettings Height="20" Width="20" Fill="white" Type="Circle" 
-                                                   Stroke="black" StrokeWidth="2" >
-                            
+                        <chart:ChartMarkerSettings  Height="55"  Width="20" Fill="white" Type="Circle"
+                                                   Stroke="Black" StrokeWidth="2" >
                         </chart:ChartMarkerSettings>
                     </chart:LineSeries.MarkerSettings>
+                    <chart:LineSeries.DataLabelSettings>
+                        <chart:CartesianDataLabelSettings LabelPlacement="Outer" UseSeriesPalette="False">
+                            <chart:CartesianDataLabelSettings.LabelStyle>
+                                <chart:ChartDataLabelStyle LabelFormat="$###.##"  Margin="0,25,0,0" LabelPadding="10" FontAttributes="Bold"  />
+                            </chart:CartesianDataLabelSettings.LabelStyle>
+                        </chart:CartesianDataLabelSettings>
+                    </chart:LineSeries.DataLabelSettings>
                 </chart:LineSeries>
 
             </chart:SfCartesianChart>
