@@ -1,0 +1,202 @@
+[
+  {
+    "club_tm": 131,
+    "club": "FC Barcelona",
+    "leagueCode": "ESP",
+    "spent": 1171,
+    "earned": 700,
+    "net": -471,
+    "net_neg": 471,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 13,
+    "club": "Atl�tico Madrid",
+    "leagueCode": "ESP",
+    "spent": 715,
+    "earned": 611,
+    "net": -104,
+    "net_neg": 104,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 368,
+    "club": "Sevilla FC",
+    "leagueCode": "ESP",
+    "spent": 529,
+    "earned": 437,
+    "net": -92,
+    "net_neg": 92,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 418,
+    "club": "Real Madrid",
+    "leagueCode": "ESP",
+    "spent": 661,
+    "earned": 570,
+    "net": -91,
+    "net_neg": 91,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 3709,
+    "club": "Getafe CF",
+    "leagueCode": "ESP",
+    "spent": 81,
+    "earned": 31,
+    "net": -50,
+    "net_neg": 50,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 1050,
+    "club": "Villarreal CF",
+    "leagueCode": "ESP",
+    "spent": 305,
+    "earned": 295,
+    "net": -10,
+    "net_neg": 10,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 150,
+    "club": "Real Betis",
+    "leagueCode": "ESP",
+    "spent": 221,
+    "earned": 212,
+    "net": -9,
+    "net_neg": 9,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 331,
+    "club": "CA Osasuna",
+    "leagueCode": "ESP",
+    "spent": 34,
+    "earned": 29,
+    "net": -5,
+    "net_neg": 5,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 366,
+    "club": "Real Valladolid",
+    "leagueCode": "ESP",
+    "spent": 30,
+    "earned": 27,
+    "net": -3,
+    "net_neg": 3,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 16795,
+    "club": "Granada CF",
+    "leagueCode": "ESP",
+    "spent": 44,
+    "earned": 42,
+    "net": -2,
+    "net_neg": 2,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 1533,
+    "club": "SD Eibar",
+    "leagueCode": "ESP",
+    "spent": 46,
+    "earned": 45,
+    "net": -1,
+    "net_neg": 1,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 1108,
+    "club": "CD Alav�s",
+    "leagueCode": "ESP",
+    "spent": 45,
+    "earned": 47,
+    "net": 2,
+    "net_neg": 0,
+    "net_pos": 2
+  },
+  {
+    "club_tm": 2687,
+    "club": "C�diz CF",
+    "leagueCode": "ESP",
+    "spent": 12,
+    "earned": 16,
+    "net": 4,
+    "net_neg": 0,
+    "net_pos": 4
+  },
+  {
+    "club_tm": 5358,
+    "club": "Huesca SD",
+    "leagueCode": "ESP",
+    "spent": 13,
+    "earned": 18,
+    "net": 5,
+    "net_neg": 0,
+    "net_pos": 5
+  },
+  {
+    "club_tm": 1531,
+    "club": "Elche CF",
+    "leagueCode": "ESP",
+    "spent": 6,
+    "earned": 12,
+    "net": 6,
+    "net_neg": 0,
+    "net_pos": 6
+  },
+  {
+    "club_tm": 3368,
+    "club": "Levante UD",
+    "leagueCode": "ESP",
+    "spent": 62,
+    "earned": 79,
+    "net": 17,
+    "net_neg": 0,
+    "net_pos": 17
+  },
+  {
+    "club_tm": 940,
+    "club": "Celta Vigo",
+    "leagueCode": "ESP",
+    "spent": 93,
+    "earned": 122,
+    "net": 29,
+    "net_neg": 0,
+    "net_pos": 29
+  },
+  {
+    "club_tm": 681,
+    "club": "Real Sociedad",
+    "leagueCode": "ESP",
+    "spent": 98,
+    "earned": 144,
+    "net": 46,
+    "net_neg": 0,
+    "net_pos": 46
+  },
+  {
+    "club_tm": 621,
+    "club": "Athletic Club",
+    "leagueCode": "ESP",
+    "spent": 79,
+    "earned": 145,
+    "net": 66,
+    "net_neg": 0,
+    "net_pos": 66
+  },
+  {
+    "club_tm": 1049,
+    "club": "Valencia CF",
+    "leagueCode": "ESP",
+    "spent": 292,
+    "earned": 359,
+    "net": 67,
+    "net_neg": 0,
+    "net_pos": 67
+  }
+]

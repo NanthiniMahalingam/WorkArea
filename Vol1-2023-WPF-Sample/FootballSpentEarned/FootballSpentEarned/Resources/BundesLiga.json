@@ -1,0 +1,188 @@
+[
+  {
+    "club_tm": 23826,
+    "club": "RB Leipzig",
+    "leagueCode": "GER",
+    "spent": 390,
+    "earned": 214,
+    "net": -176,
+    "net_neg": 176,
+    "net_pos": 0
+  },
+
+  {
+    "club_tm": 27,
+    "club": "Bayern M�nchen",
+    "leagueCode": "GER",
+    "spent": 472,
+    "earned": 301,
+    "net": -171,
+    "net_neg": 171,
+    "net_pos": 0
+  },
+
+  {
+    "club_tm": 44,
+    "club": "Hertha BSC",
+    "leagueCode": "GER",
+    "spent": 185,
+    "earned": 76,
+    "net": -109,
+    "net_neg": 109,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 82,
+    "club": "VfL Wolfsburg",
+    "leagueCode": "GER",
+    "spent": 283,
+    "earned": 175,
+    "net": -108,
+    "net_neg": 108,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 33,
+    "club": "FC Schalke 04",
+    "leagueCode": "GER",
+    "spent": 188,
+    "earned": 141,
+    "net": -47,
+    "net_neg": 47,
+    "net_pos": 0
+  },
+
+
+  {
+    "club_tm": 18,
+    "club": "Borussia M'gladbach",
+    "leagueCode": "GER",
+    "spent": 181,
+    "earned": 160,
+    "net": -21,
+    "net_neg": 21,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 86,
+    "club": "Werder Bremen",
+    "leagueCode": "GER",
+    "spent": 109,
+    "earned": 88,
+    "net": -21,
+    "net_neg": 21,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 15,
+    "club": "Bayer Leverkusen",
+    "leagueCode": "GER",
+    "spent": 321,
+    "earned": 303,
+    "net": -18,
+    "net_neg": 18,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 167,
+    "club": "FC Augsburg",
+    "leagueCode": "GER",
+    "spent": 81,
+    "earned": 64,
+    "net": -17,
+    "net_neg": 17,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 3,
+    "club": "FC K�ln",
+    "leagueCode": "GER",
+    "spent": 106,
+    "earned": 94,
+    "net": -12,
+    "net_neg": 12,
+    "net_pos": 0
+  },
+
+  {
+    "club_tm": 79,
+    "club": "VfB Stuttgart",
+    "leagueCode": "GER",
+    "spent": 140,
+    "earned": 131,
+    "net": -9,
+    "net_neg": 9,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 89,
+    "club": "Union Berlin",
+    "leagueCode": "GER",
+    "spent": 19,
+    "earned": 19,
+    "net": 0,
+    "net_neg": 0,
+    "net_pos": 0
+  },
+  {
+    "club_tm": 10,
+    "club": "Arminia Bielefeld",
+    "leagueCode": "GER",
+    "spent": 2,
+    "earned": 5,
+    "net": 3,
+    "net_neg": 0,
+    "net_pos": 3
+  },
+  {
+    "club_tm": 60,
+    "club": "SC Freiburg",
+    "leagueCode": "GER",
+    "spent": 88,
+    "earned": 103,
+    "net": 15,
+    "net_neg": 0,
+    "net_pos": 15
+  },
+  {
+    "club_tm": 24,
+    "club": "Eintracht Frankfurt",
+    "leagueCode": "GER",
+    "spent": 133,
+    "earned": 149,
+    "net": 16,
+    "net_neg": 0,
+    "net_pos": 16
+  },
+
+  {
+    "club_tm": 39,
+    "club": "FSV Mainz 05",
+    "leagueCode": "GER",
+    "spent": 123,
+    "earned": 155,
+    "net": 32,
+    "net_neg": 0,
+    "net_pos": 32
+  },
+  {
+    "club_tm": 16,
+    "club": "Borussia Dortmund",
+    "leagueCode": "GER",
+    "spent": 582,
+    "earned": 659,
+    "net": 77,
+    "net_neg": 0,
+    "net_pos": 77
+  },
+  {
+    "club_tm": 533,
+    "club": "TSG Hoffenheim",
+    "leagueCode": "GER",
+    "spent": 150,
+    "earned": 237,
+    "net": 87,
+    "net_neg": 0,
+    "net_pos": 87
+  }
+]
