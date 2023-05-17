@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace FootballSpentEarned
@@ -28,6 +29,7 @@ namespace FootballSpentEarned
                 liga = value;
             }
         }
+
         private List<FootballMarket> ligue1;
         public List<FootballMarket> Ligue1
         {
@@ -37,6 +39,7 @@ namespace FootballSpentEarned
                 ligue1 = value;
             }
         }
+
         private List<FootballMarket> bundesliga;
         public List<FootballMarket> Bundesliga
         {
@@ -46,6 +49,7 @@ namespace FootballSpentEarned
                 bundesliga = value;
             }
         }
+
         private List<FootballMarket> serieA;
         public List<FootballMarket> SerieA
         {
@@ -54,46 +58,32 @@ namespace FootballSpentEarned
             {
                 serieA = value;
             }
+        }
 
+        private List<FootballMarket> data;
+        public List<FootballMarket> Data
+        {
+            get { return data; }
+            set
+            {
+                data = value;
+            }
         }
 
         public FootballRevenue()
         {
             Assembly executingAssembly = typeof(App).GetTypeInfo().Assembly;
-          
-            using (var stream = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.PremierLeague.json"))
+            using (var stream = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.data.json"))
             using (TextReader textStream = new StreamReader(stream))
             {
-                var data1 = textStream.ReadToEnd();
-                PremierLeague = JsonConvert.DeserializeObject<List<FootballMarket>>(data1);
-            }
-
-            using (var stream = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.Liga.json"))
-            using (TextReader textStream = new StreamReader(stream))
-            {
-                var data2 = textStream.ReadToEnd();
-                Liga = JsonConvert.DeserializeObject<List<FootballMarket>>(data2);
-            }
-
-            using (var stream = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.Ligue1.json"))
-            using (TextReader textStream = new StreamReader(stream))
-            {
-                var data3 = textStream.ReadToEnd();
-                Ligue1 = JsonConvert.DeserializeObject<List<FootballMarket>>(data3);
-            }
-
-            using (var stream = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.BundesLiga.json"))
-            using (TextReader textStream = new StreamReader(stream))
-            {
-                var data4 = textStream.ReadToEnd();
-                Bundesliga = JsonConvert.DeserializeObject<List<FootballMarket>>(data4);
-            }
-
-            using (var stream = executingAssembly.GetManifestResourceStream("FootballSpentEarned.Resources.SerieA.json"))
-            using (TextReader textStream = new StreamReader(stream))
-            {
-                var data5 = textStream.ReadToEnd();
-                SerieA = JsonConvert.DeserializeObject<List<FootballMarket>>(data5);
+                var data = textStream.ReadToEnd();
+                data = data.Trim();
+                Data = JsonConvert.DeserializeObject<List<FootballMarket>>(data);
+                PremierLeague = Data.Where(d => d.LeagueCode == "ENG").ToList();
+                Bundesliga = Data.Where(d => d.LeagueCode == "GER").ToList();
+                Liga = Data.Where(d => d.LeagueCode == "ESP").ToList();
+                Ligue1 = Data.Where(d => d.LeagueCode == "FRA").ToList();
+                SerieA = Data.Where(d => d.LeagueCode == "ITA").ToList();
             }
         }
     }

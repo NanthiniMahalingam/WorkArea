@@ -11,6 +11,7 @@
         <Grid.Resources>
             <local:Converter x:Key="imageConverter" />
             <local:ImageConverter x:Key="toolTipConverter" />
+            <local:ColorConverter x:Key="color" />
             <Style TargetType="Path" x:Key="style">
                 <Setter Property="Stroke" Value="Black"/>
                 <Setter Property="Fill" Value="White"/>
@@ -20,7 +21,17 @@
             <Style TargetType="Line" x:Key="lineStyle"  >
                 <Setter Property="StrokeThickness" Value="1"/>
                 <Setter Property="Stroke" Value="#E5E7EB"/>
+
             </Style>
+            <DataTemplate x:Key="legend">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="{Binding Converter={StaticResource imageConverter}}" 
+                                           Margin="3,3,0,0" Height="12" VerticalAlignment="Center" Width="20" 
+                                           HorizontalAlignment="Left" />
+                    <TextBlock Text="{Binding Label}" Foreground="{Binding Interior}" 
+                                               FontSize="13" Margin="3" FontWeight="SemiBold"  />
+                </StackPanel>
+            </DataTemplate>
             <DataTemplate x:Key="toolTip1">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -33,107 +44,7 @@
                     <Rectangle Fill="Gray" Height="1" Width="100" />
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
                         <Rectangle  Stroke="Black" StrokeThickness="1"
-                               Height="10" Width="10" Fill="#d61111"  />
-                        <Label Content="{Binding Item.LeagueCode}"  HorizontalAlignment="Center" 
-                           HorizontalContentAlignment="Left" Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"
-                           Margin="3,0,3,0" />
-                        <TextBlock Text=" : " FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                        <TextBlock Text="{Binding Item.Net, StringFormat='{}{0}M€'}" FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                    </StackPanel>
-                </StackPanel>
-            </DataTemplate>
-            <DataTemplate x:Key="toolTip2">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding Item.Club,Converter={StaticResource toolTipConverter}}" Height="30" Width="30" />
-                        <Label Content="{Binding Item.Club}" HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" 
-                       Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                    </StackPanel>
-                    <Rectangle Fill="Gray" Height="1" Width="100" />
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
-                        <Rectangle  Stroke="Black" StrokeThickness="1"
-                               Height="10" Width="10" Fill="#e19620"  />
-                        <Label Content="{Binding Item.LeagueCode}"  HorizontalAlignment="Center" 
-                           HorizontalContentAlignment="Left" Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"
-                           Margin="3,0,3,0" />
-                        <TextBlock Text=" : " FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                        <TextBlock Text="{Binding Item.Net, StringFormat='{}{0}M€'}" FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                    </StackPanel>
-                </StackPanel>
-            </DataTemplate>
-            <DataTemplate x:Key="toolTip3">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding Item.Club,Converter={StaticResource toolTipConverter}}" Height="30" Width="30" />
-                        <Label Content="{Binding Item.Club}" HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" 
-                       Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                    </StackPanel>
-                    <Rectangle Fill="Gray" Height="1" Width="100" />
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
-                        <Rectangle  Stroke="Black" StrokeThickness="1"
-                               Height="10" Width="10" Fill="#00008B"  />
-                        <Label Content="{Binding Item.LeagueCode}"  HorizontalAlignment="Center" 
-                           HorizontalContentAlignment="Left" Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"
-                           Margin="3,0,3,0" />
-                        <TextBlock Text=" : " FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                        <TextBlock Text="{Binding Item.Net, StringFormat='{}{0}M€'}" FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                    </StackPanel>
-                </StackPanel>
-            </DataTemplate>
-            <DataTemplate x:Key="toolTip4">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding Item.Club,Converter={StaticResource toolTipConverter}}" Height="30" Width="30" />
-                        <Label Content="{Binding Item.Club}" HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" 
-                       Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                    </StackPanel>
-                    <Rectangle Fill="Gray" Height="1" Width="100" />
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
-                        <Rectangle  Stroke="Black" StrokeThickness="1"
-                               Height="10" Width="10" Fill="#000000"  />
-                        <Label Content="{Binding Item.LeagueCode}"  HorizontalAlignment="Center" 
-                           HorizontalContentAlignment="Left" Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"
-                           Margin="3,0,3,0" />
-                        <TextBlock Text=" : " FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                        <TextBlock Text="{Binding Item.Net, StringFormat='{}{0}M€'}" FontWeight="Bold" 
-                           VerticalAlignment="Center" Foreground="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
-                           FontSize="12" />
-                    </StackPanel>
-                </StackPanel>
-            </DataTemplate>
-            <DataTemplate x:Key="toolTip5">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="{Binding Item.Club,Converter={StaticResource toolTipConverter}}" Height="30" Width="30" />
-                        <Label Content="{Binding Item.Club}" HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" 
-                       Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                    </StackPanel>
-                    <Rectangle Fill="Gray" Height="1" Width="100" />
-                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" >
-                        <Rectangle  Stroke="Black" StrokeThickness="1"
-                               Height="10" Width="10" Fill="#49a349"  />
+                               Height="10" Width="10" Fill="{Binding Item,Converter={StaticResource color}}" />
                         <Label Content="{Binding Item.LeagueCode}"  HorizontalAlignment="Center" 
                            HorizontalContentAlignment="Left" Foreground="Black" FontWeight="Bold" FontFamily="Helvetica" FontSize="12"
                            Margin="3,0,3,0" />
@@ -155,16 +66,16 @@
             <Border.Effect>
                 <DropShadowEffect/>
             </Border.Effect>
-            <chart:SfChart x:Name="chart" HorizontalHeaderAlignment="Left">
+            <chart:SfChart Margin="10" x:Name="chart" HorizontalHeaderAlignment="Left">
                 <chart:SfChart.Header>
-                    <Grid HorizontalAlignment="Left" Margin="5,0,0,10" VerticalAlignment="Center" >
+                    <Grid HorizontalAlignment="Left" Margin="5,0,0,10"  VerticalAlignment="Center" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="13"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel  Orientation="Vertical" Background="Green" Margin="0,10,0,0"  Grid.RowSpan="2"/>
                         <StackPanel Margin="5,0,0,0" HorizontalAlignment="Left"  Orientation="Vertical" Grid.Column="1" >
-                            <TextBlock  Text="Soccer Transfer Spending" 
+                            <TextBlock  Text="Football Transfer Spending" 
                        HorizontalAlignment="Left" TextWrapping="Wrap"
                        FontSize="35" FontWeight="SemiBold" Foreground="Black"/>
                             <TextBlock Text="Cumulative transfer spending and earning of clubs from European football since summer 2016" 
@@ -173,6 +84,7 @@
                         </StackPanel>
                     </Grid>
                 </chart:SfChart.Header>
+                
                 <chart:SfChart.PrimaryAxis>
                     <chart:NumericalAxis Interval="250" AxisLineStyle="{StaticResource lineStyle}"
                                          MajorTickLineStyle="{StaticResource lineStyle}" 
@@ -185,6 +97,7 @@
                         </chart:NumericalAxis.Header>
                     </chart:NumericalAxis>
                 </chart:SfChart.PrimaryAxis>
+                
                 <chart:SfChart.SecondaryAxis>
                     <chart:NumericalAxis Interval="250" AxisLineStyle="{StaticResource lineStyle}" 
                                          MajorTickLineStyle="{StaticResource lineStyle}" 
@@ -196,44 +109,39 @@
                         </chart:NumericalAxis.Header>
                     </chart:NumericalAxis>
                 </chart:SfChart.SecondaryAxis>
+                
                 <chart:SfChart.Legend>
-                    <chart:ChartLegend ItemMargin="0,50,0,0" DockPosition="Right" >
-                        <chart:ChartLegend.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="{Binding Converter={StaticResource imageConverter}}" 
-                                           Margin="0,3,0,0" Height="12" VerticalAlignment="Center" Width="20" 
-                                           HorizontalAlignment="Left" />
-                                    <TextBlock Text="{Binding Label}" Foreground="{Binding Interior}" 
-                                               FontSize="13" Margin="3" FontWeight="SemiBold"  />
-                                </StackPanel>
-                            </DataTemplate>
-                        </chart:ChartLegend.ItemTemplate>
-                    </chart:ChartLegend>
+                    <chart:ChartLegend ItemTemplate="{StaticResource legend}" ItemMargin="50,50,0,0" DockPosition="Right" />
                 </chart:SfChart.Legend>
+                
                 <chart:SfChart.Behaviors>
-                    <chart:ChartTooltipBehavior ShowDuration="1000" Style="{StaticResource style}"  />
+                    <chart:ChartTooltipBehavior ShowDuration="2500" Style="{StaticResource style}"  />
                 </chart:SfChart.Behaviors>
+                
                 <chart:SfChart.Series>
-                    <local:ScatterExt  XBindingPath="Spent" Interior="#d61111" ScatterHeight="10" 
-                                       Source="ENG.png" ShowTooltip="True" TooltipTemplate="{StaticResource toolTip1}"       
-                                       Label="PremierLeague (England)"  ScatterWidth="10"
-                                       ShapeType="Square" YBindingPath="Earned" ItemsSource="{Binding PremierLeague}" >
-                    </local:ScatterExt>
-                    <local:ScatterExt  Interior="#e19620" TooltipTemplate="{StaticResource toolTip2}"
+                    <chart:FastScatterBitmapSeries  XBindingPath="Spent" Interior="#d61111" ScatterHeight="10" 
+                                      ShowTooltip="True" TooltipTemplate="{StaticResource toolTip1}"       
+                                      Label="PremierLeague (England)"  ScatterWidth="10" 
+                                      ShapeType="Square" YBindingPath="Earned" ItemsSource="{Binding PremierLeague}" />
+
+
+                    <chart:FastScatterBitmapSeries Interior="#e19620" TooltipTemplate="{StaticResource toolTip1}"
                                        ShowTooltip="True"  Label="La Liga (Spain)"  XBindingPath="Spent" ScatterHeight="10" 
-                                       ScatterWidth="10" Source="ESP.png" ShapeType="Square" 
+                                       ScatterWidth="10"  ShapeType="Square" 
                                        YBindingPath="Earned" ItemsSource="{Binding Liga}" />
-                    <local:ScatterExt Interior="#00008B" TooltipTemplate="{StaticResource toolTip3}"
-                                      ShowTooltip="True"   Source="FRA.png" Label="Ligue 1 (France)" 
+                    
+                    <chart:FastScatterBitmapSeries Interior="#00008B" TooltipTemplate="{StaticResource toolTip1}"
+                                      ShowTooltip="True"   Label="Ligue 1 (France)" 
                                       XBindingPath="Spent" ScatterHeight="10"  ScatterWidth="10"
                                       ShapeType="Square" YBindingPath="Earned" ItemsSource="{Binding Ligue1}" />
-                    <local:ScatterExt Interior="#000000" TooltipTemplate="{StaticResource toolTip4}" 
-                                      ShowTooltip="True" ScatterWidth="10" Source="GER.png" Label="Bundesliga (Germany)" 
+                    
+                   <chart:FastScatterBitmapSeries Interior="#000000" TooltipTemplate="{StaticResource toolTip1}" 
+                                      ShowTooltip="True" ScatterWidth="10"  Label="Bundesliga (Germany)" 
                                       XBindingPath="Spent" ScatterHeight="10" ShapeType="Square" 
                                       YBindingPath="Earned" ItemsSource="{Binding Bundesliga}" />
-                    <local:ScatterExt Interior="#49a349" TooltipTemplate="{StaticResource toolTip5}" 
-                                      ShowTooltip="True" Source="ITA.png"  Label="Serie A (Italy)" XBindingPath="Spent"
+                    
+                    <chart:FastScatterBitmapSeries Interior="#49a349" TooltipTemplate="{StaticResource toolTip1}" 
+                                      ShowTooltip="True"   Label="Serie A (Italy)" XBindingPath="Spent"
                                       ScatterHeight="10"  ScatterWidth="10"
                                       ShapeType="Square" YBindingPath="Earned" ItemsSource="{Binding SerieA}" />
                 </chart:SfChart.Series>

@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -110,6 +111,7 @@
     <EmbeddedResource Include="Resources\Ligue1.json" />
     <EmbeddedResource Include="Resources\PremierLeague.json" />
     <EmbeddedResource Include="Resources\SerieA.json" />
+    <EmbeddedResource Include="Resources\data.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -118,19 +120,19 @@
     <Resource Include="ClubIcons\genoa_cfc.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImageIcons\ENG.png" />
+    <Resource Include="ImageIcons\PremierLeague_%28England%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImageIcons\FRA.png" />
+    <Resource Include="ImageIcons\Ligue__%28France%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImageIcons\ITA.png" />
+    <Resource Include="ImageIcons\Serie_A_%28Italy%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImageIcons\GER.png" />
+    <Resource Include="ImageIcons\Bundesliga_%28Germany%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ImageIcons\ESP.png" />
+    <Resource Include="ImageIcons\La_Liga_%28Spain%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ClubIcons\acf_fiorentina.png" />

@@ -1,4 +1,6 @@
-﻿namespace FootballSpentEarned
+﻿using System.Windows.Media;
+
+namespace FootballSpentEarned
 {
     public class FootballMarket
     {
