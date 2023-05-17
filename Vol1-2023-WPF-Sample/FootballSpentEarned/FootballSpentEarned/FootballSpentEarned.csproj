@@ -104,13 +104,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EmbeddedResource Include="Resources\Liga.json">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\BundesLiga.json" />
-    <EmbeddedResource Include="Resources\Ligue1.json" />
-    <EmbeddedResource Include="Resources\PremierLeague.json" />
-    <EmbeddedResource Include="Resources\SerieA.json" />
     <EmbeddedResource Include="Resources\data.json" />
   </ItemGroup>
   <ItemGroup>
