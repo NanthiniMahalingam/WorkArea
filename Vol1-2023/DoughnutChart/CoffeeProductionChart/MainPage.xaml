@@ -9,6 +9,7 @@
         <local:WorldCoffeeProduction x:Name="coffeeProduction"/>
     </ContentPage.BindingContext>
     <ContentPage.Resources>
+        <local:DataLabelConverter x:Key="dataLabel" />
         <local:CornerRadiusConverter x:Key="innerRadiusConverter" />
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -16,7 +17,7 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="30" />
             </Border.StrokeShape>
-            <chart:SfCircularChart>
+            <chart:SfCircularChart >
                 <chart:SfCircularChart.Title>
                     <Grid>
                         <Border Padding="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
@@ -36,7 +37,7 @@
                 </chart:SfCircularChart.Legend>
                 <chart:DoughnutSeries ShowDataLabels="True" x:Name="series" StartAngle="0" EndAngle="360"
                                       ExplodeRadius="10" PaletteBrushes="{Binding PaletteBrushes}"
-                                      ItemsSource="{Binding ProductionDetails}"
+                                      ItemsSource="{Binding ProductionDetails}" GroupTo="7" 
                                       XBindingPath="Country" Stroke="white" StrokeWidth="1"
                                       YBindingPath="Production">
                     <chart:DoughnutSeries.CenterView>
@@ -49,7 +50,7 @@
 
                             <StackLayout Orientation="Vertical">
                                 <Label  FontSize="{OnPlatform WinUI='14',iOS='12',MacCatalyst='14',Android='12'}" 
-                                        FontAttributes="Bold" Text="{Binding Country,Source={x:Reference coffeeProduction}}"
+                                        FontAttributes="Bold" Text="{Binding Country,Converter={StaticResource dataLabel},Source={x:Reference coffeeProduction}}"
                                         HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="EndAndExpand" TextColor="Black" />
                                 <Label FontSize="{OnPlatform WinUI='14',iOS='12',MacCatalyst='14',Android='12'}"
@@ -70,12 +71,13 @@
                         <chart:CircularDataLabelSettings LabelPlacement="Inner" >
                             <chart:CircularDataLabelSettings.LabelStyle>
                                 <chart:ChartDataLabelStyle FontSize="15" TextColor="Black"
-                                                           LabelFormat="###.#M"  />
+                                                           LabelFormat="###.#M" />
                             </chart:CircularDataLabelSettings.LabelStyle>
                         </chart:CircularDataLabelSettings>
                     </chart:DoughnutSeries.DataLabelSettings>
                     <chart:DoughnutSeries.SelectionBehavior>
-                        <chart:DataPointSelectionBehavior  SelectedIndex="{Binding SelectedIndex,Mode=TwoWay}" />
+                        <chart:DataPointSelectionBehavior  SelectedIndex="{Binding SelectedIndex,Mode=TwoWay}" 
+                                                           />
                     </chart:DoughnutSeries.SelectionBehavior>
                 </chart:DoughnutSeries>
             </chart:SfCircularChart>
