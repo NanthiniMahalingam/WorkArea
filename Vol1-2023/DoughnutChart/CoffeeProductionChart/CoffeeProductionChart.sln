@@ -5,10 +5,13 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeProductionChart", "CoffeeProductionChart.csproj", "{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Syncfusion.Maui.Charts", "..\..\..\..\..\..\A-GroupToFeatureFiles\Clone-UpdatedTheChanges\maui-charts\maui\src\charts\Syncfusion.Maui.Charts.csproj", "{2F490B52-AFBE-4AC2-8B72-E578F8AD1457}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Release-Xml|Any CPU = Release-Xml|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -16,6 +19,15 @@ Global
 		{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}.Release-Xml|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}.Release-Xml|Any CPU.Build.0 = Release|Any CPU
+		{F7CB29AA-62BC-4E2D-B271-C5BA33BA9C70}.Release-Xml|Any CPU.Deploy.0 = Release|Any CPU
+		{2F490B52-AFBE-4AC2-8B72-E578F8AD1457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F490B52-AFBE-4AC2-8B72-E578F8AD1457}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F490B52-AFBE-4AC2-8B72-E578F8AD1457}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F490B52-AFBE-4AC2-8B72-E578F8AD1457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F490B52-AFBE-4AC2-8B72-E578F8AD1457}.Release-Xml|Any CPU.ActiveCfg = Release-Xml|Any CPU
+		{2F490B52-AFBE-4AC2-8B72-E578F8AD1457}.Release-Xml|Any CPU.Build.0 = Release-Xml|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

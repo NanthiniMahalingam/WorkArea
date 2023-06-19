@@ -10,74 +10,146 @@
   </ContentPage.BindingContext>
 
     <ContentPage.Resources>
-      <DataTemplate x:Key="legendTemplate">
-            <HorizontalStackLayout Margin="5,0,0,0">
-                <Rectangle HeightRequest="10" WidthRequest="10" Fill="{Binding IconBrush}" />
-                <Label Text="{Binding Item.Label}" Margin="10,0,0,0" FontSize="12" TextColor="Black" />
-            </HorizontalStackLayout>
-        </DataTemplate>
+        <local:ImageSourceConverter x:Key="imageConverter" />
+       
         <DataTemplate x:Key="toolTip1">
-            <StackLayout>
-                <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center"
+            <Border Stroke="Black" StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="3" />
+                </Border.StrokeShape>
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <Image Source="{Binding Item.Club,Converter={StaticResource imageConverter}}" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center"
                        HorizontalOptions="Center" VerticalTextAlignment="Center"
-                       TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" 
+                       TextColor="Black" FontAttributes="Bold" FontFamily="Helvetica" 
                        Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
-                <StackLayout Orientation="Horizontal" VerticalOptions="Fill" Spacing="0" Padding="3" Margin="0">
-                    <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2"
-                               HeightRequest="10" WidthRequest="10" Fill="#2986CC" Margin="0,3,3,0" />
-                    <Label Text="{Binding Item.LeagueCode}"  VerticalTextAlignment="Center" 
-                           HorizontalOptions="Start" TextColor="White" FontFamily="Helvetica" FontSize="12"
+                    </HorizontalStackLayout>
+                    <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal"  Spacing="0" Padding="3" Margin="0">
+                        <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2"
+                               HeightRequest="10" WidthRequest="10" Fill="#d61111" Margin="0,3,3,0" />
+                        <Label Text="{Binding Item.LeagueCode}"  VerticalTextAlignment="Center" 
+                           HorizontalOptions="Start" TextColor="Black" FontAttributes="Bold" FontFamily="Helvetica" FontSize="12"
                            Margin="3,0,3,0" />
-                    <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" VerticalTextAlignment="Center" 
-                           HorizontalOptions="End" TextColor="White" FontFamily="Helvetica" Margin="0,0,3,0" 
+                        <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" FontAttributes="Bold" VerticalTextAlignment="Center" 
+                           HorizontalOptions="End" TextColor="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
                            FontSize="12" />
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            </Border>
         </DataTemplate>
         <DataTemplate x:Key="toolTip2">
-            <StackLayout>
-                <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
-                <StackLayout Orientation="Horizontal" VerticalOptions="Fill" Spacing="0" Padding="3" Margin="0">
-                    <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10" WidthRequest="10" Fill="Orange" Margin="0,3,3,0" />
-                    <Label Text="{Binding Item.LeagueCode}"  VerticalTextAlignment="Center" HorizontalOptions="Start" TextColor="White" FontFamily="Helvetica" FontSize="12" Margin="3,0,3,0" />
-                    <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" VerticalTextAlignment="Center" HorizontalOptions="End" TextColor="White" FontFamily="Helvetica" Margin="0,0,3,0"  FontSize="12" />
+            <Border Stroke="Black" StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="3" />
+                </Border.StrokeShape>
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <Image Source="{Binding Item.Club,Converter={StaticResource imageConverter}}" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" 
+                               HorizontalOptions="Center" VerticalTextAlignment="Center"
+                               TextColor="Black" FontAttributes="Bold" FontFamily="Helvetica" 
+                               Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
+                    </HorizontalStackLayout>
+                    <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" 
+                                 Spacing="0" Padding="3" Margin="0" HorizontalOptions="CenterAndExpand">
+                            <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10" 
+                                       WidthRequest="10" Fill="#f1c232" Margin="0,3,3,0" />
+                        <Label Text="{Binding Item.LeagueCode}" FontAttributes="Bold" VerticalTextAlignment="Center" 
+                           HorizontalOptions="Start" TextColor="Black" FontFamily="Helvetica" FontSize="12"
+                           Margin="3,0,3,0" />
+                        <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" FontAttributes="Bold" VerticalTextAlignment="Center" 
+                           HorizontalOptions="End" TextColor="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
+                           FontSize="12" />
+                    </StackLayout>
+                    
                 </StackLayout>
-            </StackLayout>
+            </Border>
         </DataTemplate>
         <DataTemplate x:Key="toolTip3">
-            <StackLayout>
-                <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
-                <StackLayout Orientation="Horizontal" VerticalOptions="Fill" Spacing="0" Padding="3" Margin="0">
-                    <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10" WidthRequest="10" Fill="#BCBCBC" Margin="0,3,3,0" />
-                    <Label Text="{Binding Item.LeagueCode}"  VerticalTextAlignment="Center" HorizontalOptions="Start" TextColor="White" FontFamily="Helvetica" FontSize="12" Margin="3,0,3,0" />
-                    <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" VerticalTextAlignment="Center" HorizontalOptions="End" TextColor="White" FontFamily="Helvetica" Margin="0,0,3,0"  FontSize="12" />
+            <Border Stroke="Black" StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="3" />
+                </Border.StrokeShape>
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <Image Source="{Binding Item.Club,Converter={StaticResource imageConverter}}" HeightRequest="30" WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" HorizontalOptions="Center" 
+                               VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" 
+                               FontFamily="Helvetica" Margin="0,2,0,2" FontSize="12" />
+                    </HorizontalStackLayout>
+                    <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" 
+                                 VerticalOptions="CenterAndExpand" Spacing="0" Padding="3" Margin="0">
+                        <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10" 
+                                   WidthRequest="10" Fill="#00008B" Margin="0,3,3,0" />
+                        <Label Text="{Binding Item.LeagueCode}"  FontAttributes="Bold" VerticalTextAlignment="Center" 
+                           HorizontalOptions="Start" TextColor="Black" FontFamily="Helvetica" FontSize="12"
+                           Margin="3,0,3,0" />
+                        <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" FontAttributes="Bold" VerticalTextAlignment="Center" 
+                           HorizontalOptions="End" TextColor="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
+                           FontSize="12" />
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            </Border>
+           
         </DataTemplate>
         <DataTemplate x:Key="toolTip4">
-            <StackLayout>
-                <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
-                <StackLayout Orientation="Horizontal" VerticalOptions="Fill" Spacing="0" Padding="3" Margin="0">
-                    <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10" WidthRequest="10" Fill="Yellow" Margin="0,3,3,0" />
-                    <Label Text="{Binding Item.LeagueCode}"  VerticalTextAlignment="Center" HorizontalOptions="Start" TextColor="White" FontFamily="Helvetica" FontSize="12" Margin="3,0,3,0" />
-                    <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" VerticalTextAlignment="Center" HorizontalOptions="End" TextColor="White" FontFamily="Helvetica" Margin="0,0,3,0"  FontSize="12" />
+            <Border Stroke="Black" StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="3" />
+                </Border.StrokeShape>
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <Image Source="{Binding Item.Club,Converter={StaticResource imageConverter}}" HeightRequest="30" 
+                               WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" HorizontalOptions="Center" 
+                               VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" 
+                               FontFamily="Helvetica" Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
+                    </HorizontalStackLayout>
+                    <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" 
+                                 HorizontalOptions="CenterAndExpand" Spacing="0" Padding="3" Margin="0">
+                        <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10" WidthRequest="10" Fill="#000000" Margin="0,3,3,0" />
+                        <Label FontAttributes="Bold" Text="{Binding Item.LeagueCode}"  VerticalTextAlignment="Center" 
+                           HorizontalOptions="Start" TextColor="Black" FontFamily="Helvetica" FontSize="12"
+                           Margin="3,0,3,0" />
+                        <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" VerticalTextAlignment="Center" 
+                           HorizontalOptions="End" TextColor="Black" FontAttributes="Bold" FontFamily="Helvetica" Margin="0,0,3,0" 
+                           FontSize="12" />
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            </Border>
         </DataTemplate>
         <DataTemplate x:Key="toolTip5">
-            <StackLayout>
-                <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontFamily="Helvetica" Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
-                <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
-                <StackLayout Orientation="Horizontal" VerticalOptions="Fill" Spacing="0" Padding="3" Margin="0">
-                    <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10" WidthRequest="10" Fill="#800080" Margin="0,3,3,0" />
-                    <Label Text="{Binding Item.LeagueCode}"  VerticalTextAlignment="Center" HorizontalOptions="Start" TextColor="White" FontFamily="Helvetica" FontSize="12" Margin="3,0,3,0" />
-                    <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" VerticalTextAlignment="Center" HorizontalOptions="End" TextColor="White" FontFamily="Helvetica" Margin="0,0,3,0"  FontSize="12" />
+            <Border Stroke="Black" StrokeThickness="1">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="3" />
+                </Border.StrokeShape>
+                <StackLayout>
+                    <HorizontalStackLayout>
+                        <Image Source="{Binding Item.Club,Converter={StaticResource imageConverter}}" HeightRequest="30" 
+                               WidthRequest="30" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        <Label Text="{Binding Item.Club}" HorizontalTextAlignment="Center" HorizontalOptions="Center" 
+                               VerticalTextAlignment="Center" TextColor="Black" FontAttributes="Bold" 
+                               FontFamily="Helvetica" Margin="0,2,0,2" FontSize="12" Grid.Row="0"/>
+                    </HorizontalStackLayout>
+                    <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" />
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" 
+                                 HorizontalOptions="CenterAndExpand" Spacing="0" Padding="3" Margin="0">
+                        <Rectangle TranslationY="-1"  Stroke="White" StrokeThickness="2" HeightRequest="10"
+                                   WidthRequest="10" Fill="#49a349" Margin="0,3,3,0" />
+                        <Label Text="{Binding Item.LeagueCode}" FontAttributes="Bold" VerticalTextAlignment="Center" 
+                           HorizontalOptions="Start" TextColor="Black" FontFamily="Helvetica" FontSize="12"
+                           Margin="3,0,3,0" />
+                        <Label Text="{Binding Item.Net,StringFormat=' :  {0}M€'}" VerticalTextAlignment="Center" 
+                           HorizontalOptions="End" FontAttributes="Bold" TextColor="Black" FontFamily="Helvetica" Margin="0,0,3,0" 
+                           FontSize="12" />
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
+            </Border>
         </DataTemplate>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -87,18 +159,10 @@
             </Border.StrokeShape>
             <chart:SfCartesianChart>
                 <chart:SfCartesianChart.Title>
-                    <Grid HeightRequest="130">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Text="Football Transfer Spending and Earning in Scatter Chart" FontSize="30" 
-                               HorizontalOptions="CenterAndExpand" FontAttributes="Bold"
-                               VerticalOptions="CenterAndExpand" TextColor="Black" />
-                        <Label Grid.Row="1" Text="Net transfer spending since summer 2016" HorizontalOptions="StartAndExpand" FontSize="15"
-                               TextColor="Green"/>
-                        <Label Grid.Row="2" Text="€ Million" TextColor="Black" FontSize="15" />
+                    <Grid HeightRequest="70">
+                        <Label LineBreakMode="NoWrap" Margin="-20,0,0,0" Text="Net Transfer Spending and Earning of Big-5 League Clubs" 
+                               FontSize="34" FontFamily="Helvetica" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"
+                               VerticalOptions="CenterAndExpand" TextColor="Black"  />
                     </Grid>
                 </chart:SfCartesianChart.Title>
                 <chart:SfCartesianChart.XAxes>
@@ -106,13 +170,13 @@
                                          MinorTicksPerInterval="1" EdgeLabelsDrawingMode="Fit"
                                          ShowMajorGridLines="False" Interval="250" >
                         <chart:NumericalAxis.Title>
-                            <chart:ChartAxisTitle Text="Transfer Spending"  TextColor="Black"  />
+                            <chart:ChartAxisTitle Text="Transfer Spending" FontSize="20" FontAttributes="Bold"  TextColor="Black"  />
                         </chart:NumericalAxis.Title>
                         <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle LabelFormat="#,0'M€" FontAttributes="Bold" />
+                            <chart:ChartAxisLabelStyle LabelFormat="#,0'M€"  />
                         </chart:NumericalAxis.LabelStyle>
                         <chart:NumericalAxis.AxisLineStyle>
-                            <chart:ChartLineStyle Stroke="transparent" StrokeWidth="2" />
+                            <chart:ChartLineStyle Stroke="Black" StrokeWidth="2" />
                         </chart:NumericalAxis.AxisLineStyle>
                         <chart:NumericalAxis.MajorTickStyle>
                             <chart:ChartAxisTickStyle Stroke="Black" StrokeWidth="1.5" />
@@ -123,56 +187,85 @@
                     <chart:NumericalAxis Minimum="0" EdgeLabelsVisibilityMode="AlwaysVisible" EdgeLabelsDrawingMode="Fit"
                                          MinorTicksPerInterval="1" ShowMajorGridLines="False" Interval="250" >
                         <chart:NumericalAxis.Title>
-                            <chart:ChartAxisTitle Text="Transfer Earning" TextColor="Black"  />
+                            <chart:ChartAxisTitle Text="Transfer Earning" FontSize="20" FontAttributes="Bold" TextColor="Black"  />
                         </chart:NumericalAxis.Title>
                         <chart:NumericalAxis.LabelStyle>
-                            <chart:ChartAxisLabelStyle LabelFormat="#,0'M€" FontAttributes="Bold" />
+                            <chart:ChartAxisLabelStyle LabelFormat="#,0'M€"  />
                         </chart:NumericalAxis.LabelStyle>
                         <chart:NumericalAxis.AxisLineStyle>
-                            <chart:ChartLineStyle Stroke="transparent" StrokeWidth="2" />
+                            <chart:ChartLineStyle Stroke="Black" StrokeWidth="2" />
                         </chart:NumericalAxis.AxisLineStyle>
                         <chart:NumericalAxis.MajorTickStyle>
                             <chart:ChartAxisTickStyle Stroke="Black" StrokeWidth="1.5" />
                         </chart:NumericalAxis.MajorTickStyle>
                     </chart:NumericalAxis>
                 </chart:SfCartesianChart.YAxes>
-                <chart:SfCartesianChart.PlotAreaBackgroundView>
-                    <Frame BorderColor="Black" IsClippedToBounds="False" CornerRadius="0" >
-                    </Frame>
-                </chart:SfCartesianChart.PlotAreaBackgroundView>
                 <chart:SfCartesianChart.Legend>
-                    <chart:ChartLegend Placement="Right" ItemTemplate="{StaticResource legendTemplate}" />
+                    <chart:ChartLegend Placement="{OnPlatform WinUI='Right',
+                                       Android='Top',MacCatalyst='Right',iOS='Top'}" >
+                        <chart:ChartLegend.ItemTemplate >
+                            <DataTemplate >
+                                <Grid Margin="5,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.5*"/>
+                                        <ColumnDefinition Width="2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Border Grid.Column="0" Stroke="{OnPlatform WinUI='White',Android='White',iOS='White',MacCatalyst='White'}" 
+                                            HeightRequest="50"   WidthRequest="50">
+                                        <Border.StrokeShape>
+                                            <Rectangle/>
+                                        </Border.StrokeShape>
+                                        <OnPlatform x:TypeArguments="Image">
+                                            <On Platform="WinUI, MacCatalyst, iOS">
+                                                <Image Source="{Binding Item.Source,Converter={StaticResource imageConverter}}"  
+                                                       HeightRequest="30" WidthRequest="20" 
+                                                                       HorizontalOptions="Center" VerticalOptions="Center"  />
+                                            </On>
+                                            <On Platform="Android">
+                                                <Image Source="{Binding Item.LeagueCode,Converter={StaticResource imageConverter}}" 
+                                                                       HeightRequest="30" WidthRequest="20" 
+                                                                       HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            </On>
+                                        </OnPlatform>
+                                    </Border>
+                                    <Label Grid.Column="1" HorizontalOptions="StartAndExpand" FontAttributes="Bold" VerticalOptions="CenterAndExpand"
+                                           Text="{Binding Item.Label}" Margin="5,0,0,0" FontSize="12" TextColor="Black" />
+                                </Grid>
+                            </DataTemplate>
+                        </chart:ChartLegend.ItemTemplate>
+                    </chart:ChartLegend>
                 </chart:SfCartesianChart.Legend>
                 <chart:SfCartesianChart.TooltipBehavior>
-                    <chart:ChartTooltipBehavior />
+                    <chart:ChartTooltipBehavior Background="white"  />
                 </chart:SfCartesianChart.TooltipBehavior>
-                <chart:ScatterSeries Fill="#2986CC" TooltipTemplate="{StaticResource toolTip1}" 
+                <local:ScatterExt Fill="#d61111" TooltipTemplate="{StaticResource toolTip1}" 
                                      EnableTooltip="True" Label="PremierLeague (England)" 
                                      ItemsSource="{Binding PremierLeague}" PointWidth="10" 
                                      Type="Rectangle" PointHeight="10" XBindingPath="Spent" 
-                                     YBindingPath="Earned">
-                </chart:ScatterSeries>
-                <chart:ScatterSeries Fill="orange" TooltipTemplate="{StaticResource toolTip2}"
+                                     YBindingPath="Earned" Source="{Binding England}" >
+                </local:ScatterExt>
+                <local:ScatterExt Fill="#f1c232" TooltipTemplate="{StaticResource toolTip2}"
                                      EnableTooltip="True"  ItemsSource="{Binding Liga}" 
                                      Label="La Liga (Spain)" PointWidth="10" Type="Rectangle" 
-                                     PointHeight="10" XBindingPath="Spent" YBindingPath="Earned">
-                </chart:ScatterSeries>
-                <chart:ScatterSeries  TooltipTemplate="{StaticResource toolTip3}" Fill="#BCBCBC"
-                                      EnableTooltip="True"  ItemsSource="{Binding Ligue1}" 
+                                     PointHeight="10" XBindingPath="Spent" 
+                                     YBindingPath="Earned" Source="{Binding Spain}">
+                </local:ScatterExt>
+                <local:ScatterExt  TooltipTemplate="{StaticResource toolTip3}" Fill="#00008B"
+                                      EnableTooltip="True"  ItemsSource="{Binding Ligue1}" Source="{Binding France}"
                                       Label="Ligue 1 (France)" PointWidth="10" Type="Rectangle"
                                       PointHeight="10" XBindingPath="Spent" YBindingPath="Earned">
-                </chart:ScatterSeries>
-                <chart:ScatterSeries  Fill="yellow" TooltipTemplate="{StaticResource toolTip4}" 
-                                      EnableTooltip="True"  ItemsSource="{Binding SerieA}" 
-                                      Label="Serie A (Italy)" PointWidth="10" Type="Rectangle" 
+                </local:ScatterExt>
+                <local:ScatterExt  Fill="#000000" TooltipTemplate="{StaticResource toolTip4}" 
+                                      EnableTooltip="True"  ItemsSource="{Binding Bundesliga}" Source="{Binding Germany}"
+                                       Label="Bundesliga (Germany)" PointWidth="10" Type="Rectangle" 
                                       PointHeight="10" XBindingPath="Spent" YBindingPath="Earned">
-                </chart:ScatterSeries>
-                <chart:ScatterSeries Fill="#800080" TooltipTemplate="{StaticResource toolTip5}" 
-                                      EnableTooltip="True"  ItemsSource="{Binding Bundesliga}" 
-                                      Label="Bundesliga (Germany)" PointWidth="10" 
-                                      Type="Rectangle" PointHeight="10" 
+                </local:ScatterExt>
+                <local:ScatterExt Fill="#49a349" TooltipTemplate="{StaticResource toolTip5}" 
+                                      EnableTooltip="True"  ItemsSource="{Binding SerieA}" 
+                                       PointWidth="10" Label="Serie A (Italy)"
+                                      Type="Rectangle" PointHeight="10" Source="{Binding Italy}"
                                       XBindingPath="Spent" YBindingPath="Earned">
-                </chart:ScatterSeries>
+                </local:ScatterExt>
             </chart:SfCartesianChart>
         </Border>
     </ContentPage.Content>

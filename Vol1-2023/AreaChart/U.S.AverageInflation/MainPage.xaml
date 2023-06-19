@@ -9,7 +9,7 @@
         <local:AverageInflationPercentage/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Border Stroke="Gray" Margin="10" StrokeThickness="2">
+        <Border Stroke="Gray" Margin="10,30,10,10" StrokeThickness="2">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10" />
             </Border.StrokeShape>
@@ -52,23 +52,29 @@
                     </chart:SfCartesianChart.YAxes>
                     <!--<chart:SfCartesianChart.ZoomPanBehavior>
                         <chart:ChartZoomPanBehavior EnablePanning="True" EnablePinchZooming="True" ZoomMode="XY" />
-                    </chart:SfCartesianChart.ZoomPanBehavior>
-
-                    <chart:SfCartesianChart.TrackballBehavior>
-                        <chart:ChartTrackballBehavior ShowLine="True"  ShowMarkers="True"/>
-                    </chart:SfCartesianChart.TrackballBehavior>-->
+                    </chart:SfCartesianChart.ZoomPanBehavior>-->
+                    <chart:SfCartesianChart.TrackballBehavior >
+                        <chart:ChartTrackballBehavior x:Name="trackball" ShowLine="True" ShowMarkers="True" DisplayMode="FloatAllPoints">
+                            <chart:ChartTrackballBehavior.LineStyle>
+                                <chart:ChartLineStyle Stroke="black" StrokeDashArray="3,2" StrokeWidth="1"/>
+                            </chart:ChartTrackballBehavior.LineStyle>
+                            <chart:ChartTrackballBehavior.MarkerSettings>
+                                <chart:ChartMarkerSettings Width="10" Stroke="black"  StrokeWidth="1" Height="10" Fill="white"/>
+                            </chart:ChartTrackballBehavior.MarkerSettings>
+                        </chart:ChartTrackballBehavior>
+                    </chart:SfCartesianChart.TrackballBehavior>
 
                     <chart:SfCartesianChart.PlotAreaBackgroundView >
                         <Frame BorderColor="Black" >
                         </Frame>
                     </chart:SfCartesianChart.PlotAreaBackgroundView>
-                    <chart:SplineAreaSeries ShowDataLabels="False"  ItemsSource="{Binding PositiveAveragePercentage}"
-                                      Fill="Green"
+                    <chart:AreaSeries ShowDataLabels="False"  ItemsSource="{Binding PositiveAveragePercentage}"
+                                          Fill="Green"
                                          XBindingPath="Year" YBindingPath="AveragePercentage" >
-                        <chart:SplineAreaSeries.DataLabelSettings>
+                        <chart:AreaSeries.DataLabelSettings>
                             <chart:CartesianDataLabelSettings LabelPlacement="Outer" />
-                        </chart:SplineAreaSeries.DataLabelSettings>
-                    </chart:SplineAreaSeries>
+                        </chart:AreaSeries.DataLabelSettings>
+                    </chart:AreaSeries>
                 </chart:SfCartesianChart>
                 <chart:SfCartesianChart Margin="5" Grid.Row="1">
                     <chart:SfCartesianChart.XAxes>
@@ -98,15 +104,28 @@
                             </chart:NumericalAxis.MajorTickStyle>
                         </chart:NumericalAxis>
                     </chart:SfCartesianChart.YAxes>
+                    <chart:SfCartesianChart.TrackballBehavior >
+                        <chart:ChartTrackballBehavior x:Name="trackball1"  ShowLine="True" ShowMarkers="True" DisplayMode="FloatAllPoints">
+                            <chart:ChartTrackballBehavior.LineStyle>
+                                <chart:ChartLineStyle Stroke="black" StrokeDashArray="3,2" StrokeWidth="1"/>
+                            </chart:ChartTrackballBehavior.LineStyle>
+                            <chart:ChartTrackballBehavior.MarkerSettings>
+                                <chart:ChartMarkerSettings Width="10" Stroke="black"  StrokeWidth="1" Height="10" Fill="white"/>
+                            </chart:ChartTrackballBehavior.MarkerSettings>
+                        </chart:ChartTrackballBehavior>
+                    </chart:SfCartesianChart.TrackballBehavior>
                     <chart:SfCartesianChart.PlotAreaBackgroundView >
                         <Frame BorderColor="Black" >
                         </Frame>
                     </chart:SfCartesianChart.PlotAreaBackgroundView>
-                    <chart:SplineAreaSeries  ShowDataLabels="False"
-                                      ItemsSource="{Binding NegativeAveragePercentage}"
-                                     Fill="Orange"
+                    <chart:AreaSeries  ShowDataLabels="False"
+                                       ItemsSource="{Binding NegativeAveragePercentage}"
+                                       Fill="Orange"
                                       XBindingPath="Year" YBindingPath="AveragePercentage" >
-                    </chart:SplineAreaSeries>
+                        <chart:AreaSeries.SelectionBehavior>
+                            <chart:DataPointSelectionBehavior SelectionBrush="Gray" />
+                        </chart:AreaSeries.SelectionBehavior>
+                    </chart:AreaSeries>
                 </chart:SfCartesianChart>
             </Grid>
         </Border>

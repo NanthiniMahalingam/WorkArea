@@ -80,6 +80,13 @@ namespace CoffeeProductionChart
             }
         }
 
+        private double groupTo = 7;
+        public double GroupTo
+        {
+            get { return groupTo; }
+            set { groupTo = value; }
+        }
+
         public WorldCoffeeProduction()
         {
             ProductionDetails = new List<CoffeeProductionModel>(ReadCSV());
@@ -122,9 +129,27 @@ namespace CoffeeProductionChart
                 var model = ProductionDetails[value];
                 if (model != null && model.Country != null)
                 {
-                    Country = model.Country;
-                    Production = model.Production;
-                    Percentage = model.MarketShare;
+                    if (model.Production < GroupTo)
+                    {
+                        Production = 0;
+                        Percentage = 0;
+                        Country = "";
+                        foreach (var item in productionDetails)
+                        {
+                            if (GroupTo > item.Production)
+                            {
+                                Country = "Others";
+                                Production += item.Production;
+                                Percentage += item.MarketShare;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Country = model.Country;
+                        Production = model.Production;
+                        Percentage = model.MarketShare;
+                    }
                 }
             }
         }

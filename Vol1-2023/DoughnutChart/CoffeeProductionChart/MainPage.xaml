@@ -37,7 +37,7 @@
                 </chart:SfCircularChart.Legend>
                 <chart:DoughnutSeries ShowDataLabels="True" x:Name="series" StartAngle="0" EndAngle="360"
                                       ExplodeRadius="10" PaletteBrushes="{Binding PaletteBrushes}"
-                                      ItemsSource="{Binding ProductionDetails}" GroupTo="7" 
+                                      ItemsSource="{Binding ProductionDetails}" GroupTo="{Binding GroupTo}" 
                                       XBindingPath="Country" Stroke="white" StrokeWidth="1"
                                       YBindingPath="Production">
                     <chart:DoughnutSeries.CenterView>
@@ -55,7 +55,7 @@
                                    VerticalOptions="EndAndExpand" TextColor="Black" />
                                 <Label FontSize="{OnPlatform WinUI='14',iOS='12',MacCatalyst='14',Android='12'}"
                                        Margin="{OnPlatform WinUI='4',MacCatalyst='3',iOS='2',Android='2'}" FontAttributes="Bold" 
-                                       Text="{Binding Production,Source={x:Reference coffeeProduction},StringFormat='{0}M'}" 
+                                       Text="{Binding Production,Source={x:Reference coffeeProduction},StringFormat='{0:F1}M'}" 
                                        HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="CenterAndExpand"  TextColor="Black" />
                                 <Label  FontSize="{OnPlatform WinUI='14',iOS='12',MacCatalyst='14',Android='12'}"

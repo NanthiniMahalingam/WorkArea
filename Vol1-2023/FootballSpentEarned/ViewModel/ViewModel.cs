@@ -15,6 +15,8 @@ namespace FootballSpentEarned
             }
         }
 
+        public List<FootballMarket> FlagCollection { get; set; }
+
         private List<FootballMarket> liga;
         public List<FootballMarket> Liga
         {
@@ -50,7 +52,15 @@ namespace FootballSpentEarned
             {
                 serieA = value;
             }
+        
         }
+
+        public string France { get; set; } = "fra.png";
+        public string Spain { get; set; } = "esp.png";
+        public string Germany { get; set; } = "ger.png";
+        public string England { get; set; } = "eng.png";
+        public string Italy { get; set; } = "ita.png";
+
         public FootballRevenue()
         {
             Assembly executingAssembly = typeof(App).GetTypeInfo().Assembly;
@@ -78,6 +88,18 @@ namespace FootballSpentEarned
             using StreamReader reader5 = new StreamReader(inputStream5);
             var data5 = reader5.ReadToEnd();
             serieA = JsonConvert.DeserializeObject<List<FootballMarket>>(data5);
+
+            FlagCollection = new List<FootballMarket>()
+            {
+                new  FootballMarket("eng.png"),
+                new FootballMarket("esp.png"),
+                new FootballMarket("fra.png"),
+                new FootballMarket("ger.png"),
+                new FootballMarket("ita.png")
+            };
+
+           
+
         }
     }
 }
