@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:sunburst="clr-namespace:Syncfusion.Maui.SunburstChart;assembly=Syncfusion.Maui.SunburstChart"
+             xmlns:model="clr-namespace:MauiApp2"
+             x:Class="MauiApp2.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.BindingContext>
+            <model:SunburstViewModel/>
+        </Grid.BindingContext>
+
+        <sunburst:SfSunburstChart   x:Name="sunburstChart" 
+                                ItemsSource="{Binding DataSource}"
+                               ValueMemberPath="EmployeesCount" >
+            <sunburst:SfSunburstChart.Title>
+                <Label Text="EmployeesCount" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" />
+            </sunburst:SfSunburstChart.Title>
+            <sunburst:SfSunburstChart.Legend>
+                <sunburst:ChartLegend/>
+            </sunburst:SfSunburstChart.Legend>
+            <sunburst:SfSunburstChart.TooltipSettings>
+                <sunburst:SunburstTooltipSettings EnableTooltip="True" />
+            </sunburst:SfSunburstChart.TooltipSettings>
+            <sunburst:SfSunburstChart.Levels>
+                <sunburst:SunburstHierarchicalLevel GroupMemberPath="Country"/>
+                <sunburst:SunburstHierarchicalLevel GroupMemberPath="JobDescription"/>
+                <sunburst:SunburstHierarchicalLevel GroupMemberPath="JobGroup"/>
+                <sunburst:SunburstHierarchicalLevel GroupMemberPath="JobRole"/>
+            </sunburst:SfSunburstChart.Levels>
+
+        </sunburst:SfSunburstChart>
+
+        <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="2">
+            <StackLayout Orientation="Horizontal">
+                <Button BackgroundColor="LightGray" TextColor="Black" WidthRequest="150" Margin="50,0,0,0" HeightRequest="40" Text="ItemSource" Clicked="Button_Clicked"></Button>
+
+                <Button BackgroundColor="LightGray" Margin="50,0,0,0" WidthRequest="150" TextColor="Black" HeightRequest="40" Text="PaletteBrushes" Clicked="Button_Clicked_1"></Button>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <Label Text="Radius :" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50" WidthRequest="150">
+
+                </Label>
+                <Entry Text="{Binding Source={Reference radius},Path=Value}" HeightRequest="50" ></Entry>
+            </StackLayout>
+            <Slider x:Name="radius" WidthRequest="250" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Minimum="0.5" Maximum="1" Value="0.8" ValueChanged="radius_ValueChanged"></Slider>
+
+            <StackLayout  Orientation="Horizontal">
+                <Label Text="InnerRadius :" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50" WidthRequest="150">
+
+                </Label>
+                <Entry Text="{Binding Source={Reference innerradius},Path=Value}" HeightRequest="50" ></Entry>
+            </StackLayout>
+            <Slider x:Name="innerradius" WidthRequest="250" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Minimum="0.1" Maximum="0.5" Value="0.8" ValueChanged="innerradius_ValueChanged"></Slider>
+
+
+            <StackLayout  Orientation="Horizontal">
+                <Label Text="Start Angle :" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50" WidthRequest="150">
+
+                </Label>
+                <Entry Text="{Binding Source={Reference startAngle},Path=Value}" HeightRequest="40" ></Entry>
+            </StackLayout>
+            <Slider x:Name="startAngle" WidthRequest="250" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Minimum="0" Maximum="360" Value="0" ValueChanged="startAngle_ValueChanged"></Slider>
+
+            <StackLayout  Orientation="Horizontal">
+                <Label Text="End Angle :" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50" WidthRequest="150">
+
+                </Label>
+                <Entry Text="{Binding Source={Reference endAngle},Path=Value}" HeightRequest="40" ></Entry>
+            </StackLayout>
+            <Slider x:Name="endAngle" WidthRequest="250" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Minimum="0" Maximum="360" Value="360" ValueChanged="endAngle_ValueChanged"></Slider>
+            <StackLayout  Orientation="Horizontal">
+                <Label Text="Stroke Width :" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50" WidthRequest="150">
+
+                </Label>
+                <Entry Text="{Binding Source={Reference strokeWidth},Path=Value}" HeightRequest="40" ></Entry>
+            </StackLayout>
+            <Slider x:Name="strokeWidth" WidthRequest="250" MinimumTrackColor="Red" MaximumTrackColor="Orange"  Minimum="0" Maximum="3" Value="1" ValueChanged="strokeWidth_ValueChanged"></Slider>
+
+
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="StrokeBrush :" WidthRequest="100" TextColor="Black" FontSize="Default" FontAttributes="Bold" HeightRequest="50"></Label>
+                <Picker  WidthRequest="150" HeightRequest="50" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Green</x:String>
+                        <x:String>Black</x:String>
+                        <x:String>Red</x:String>
+                        <x:String>DarkGray</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <!--<StackLayout  Orientation="Horizontal">
+             <Label Text="Levels :" TextColor="Black" FontSize="Default" FontAttributes="Bold"
+         HeightRequest="40" WidthRequest="150">
+             </Label>
+             <Button BackgroundColor="LightGray" HeightRequest="40" WidthRequest="100"
+          TextColor="Black" Text="Stroke" Clicked="Button_Clicked_3">
+             </Button>
+         </StackLayout>-->
+
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
