@@ -5,32 +5,61 @@
              xmlns:model="clr-namespace:MauiApp2"
              x:Class="MauiApp2.MainPage">
 
-    <Grid>
+    <Grid x:Name="grid">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid.BindingContext>
+        <!--<Grid.BindingContext>
             <model:SunburstViewModel/>
-        </Grid.BindingContext>
+        </Grid.BindingContext>-->
+        <Grid.Resources>
+            <model:CornerRadiusConverter x:Key="cornerRadius" />
+            <model:RadiusConverter x:Key="Radius" />
+        </Grid.Resources>
 
-        <sunburst:SfSunburstChart   x:Name="sunburstChart" 
+        <sunburst:SfSunburstChart Grid.Column="0" StrokeWidth="0"  x:Name="sunburstChart" ShowLabels="True"
+                                  EnableTooltip="True" EnableAnimation="True"
                                 ItemsSource="{Binding DataSource}"
                                ValueMemberPath="EmployeesCount" >
+            <sunburst:SfSunburstChart.Resources>
+                <model:ItemConverter x:Key="item" />
+            </sunburst:SfSunburstChart.Resources>
+            <sunburst:SfSunburstChart.BindingContext>
+                <model:SunburstViewModel/>
+            </sunburst:SfSunburstChart.BindingContext>
             <sunburst:SfSunburstChart.Title>
-                <Label Text="EmployeesCount" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" />
+                <Label Text="EmployeesCount" HorizontalOptions="Center" VerticalOptions="Center"
+                       FontSize="Medium" />
             </sunburst:SfSunburstChart.Title>
             <sunburst:SfSunburstChart.Legend>
-                <sunburst:ChartLegend/>
+                <sunburst:SunburstChartLegend IsVisible="True" x:Name="legend" >
+                  
+                </sunburst:SunburstChartLegend>
             </sunburst:SfSunburstChart.Legend>
+            <sunburst:SfSunburstChart.CenterView>
+ 
+    <StackLayout Background="Pink"  Orientation="Vertical"
+                 HeightRequest="{Binding CenterHoleSize,Converter={StaticResource cornerRadius},Source={x:Reference sunburstChart}}" WidthRequest="{Binding CenterHoleSize,Converter={StaticResource cornerRadius},Source={x:Reference sunburstChart}}"
+                 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+ 
+               <Label Text="chart" />
+</StackLayout>
+</sunburst:SfSunburstChart.CenterView>
+
             <sunburst:SfSunburstChart.TooltipSettings>
-                <sunburst:SunburstTooltipSettings EnableTooltip="True" />
+                <sunburst:SunburstTooltipSettings TextColor="Yellow" Background="Green" x:Name="toolTip"/>
             </sunburst:SfSunburstChart.TooltipSettings>
+            <sunburst:SfSunburstChart.DataLabelSettings>
+                <sunburst:SunburstDataLabelSettings x:Name="dataLabel" RotationMode="Angle" OverFlowMode="Trim" />
+            </sunburst:SfSunburstChart.DataLabelSettings>
             <sunburst:SfSunburstChart.Levels>
-                <sunburst:SunburstHierarchicalLevel GroupMemberPath="Country"/>
+                <sunburst:SunburstHierarchicalLevel x:Name="group1" GroupMemberPath="Country"/>
                 <sunburst:SunburstHierarchicalLevel GroupMemberPath="JobDescription"/>
                 <sunburst:SunburstHierarchicalLevel GroupMemberPath="JobGroup"/>
                 <sunburst:SunburstHierarchicalLevel GroupMemberPath="JobRole"/>
@@ -38,7 +67,7 @@
 
         </sunburst:SfSunburstChart>
 
-        <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="2">
+        <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="1">
             <StackLayout Orientation="Horizontal">
                 <Button BackgroundColor="LightGray" TextColor="Black" WidthRequest="150" Margin="50,0,0,0" HeightRequest="40" Text="ItemSource" Clicked="Button_Clicked"></Button>
 
@@ -105,6 +134,44 @@
              </Button>
          </StackLayout>-->
 
+            <StackLayout >
+                <!--<Switch IsToggled="{Binding ShowLabels,Source={x:Reference sunburstChart},Mode=TwoWay}" />-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="IsVisible" WidthRequest="100" HeightRequest="40"  />
+                    <Switch IsToggled="{Binding IsVisible,Source={x:Reference legend},Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="EnableTooltip" WidthRequest="100" HeightRequest="40"  />
+                    <Switch IsToggled="{Binding EnableTooltip,Source={x:Reference sunburstChart},Mode=TwoWay}" />
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+        <StackLayout Grid.Column="2" Grid.Row="0">
+            <Button HeightRequest="40" WidthRequest="150" Clicked="Button_Clicked_5"
+                    Text="GroupMemberPath"/>
+            
+            <Button HeightRequest="40" WidthRequest="150" Text="Legend- R" Clicked="Button_Clicked_6"  />
+            <Button HeightRequest="40" WidthRequest="150" Text="Legend- L" Clicked="Button_Clicked_7"  />
+            <Button HeightRequest="40" WidthRequest="150" Text="Legend- B" Clicked="Button_Clicked_8"  />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="ShowLabel" WidthRequest="100" HeightRequest="40"  />
+                <Switch IsToggled="{Binding ShowLabels,Source={x:Reference sunburstChart},Mode=TwoWay}" />
+            </StackLayout>
+            <Button HeightRequest="40" WidthRequest="100" Text="Normal" Clicked="Button_Clicked_3" />
+            <Button HeightRequest="40" WidthRequest="100" Text="Hide" Clicked="Button_Clicked_12" />
+            <Button HeightRequest="40" WidthRequest="100" Text="Font" Clicked="Button_Clicked_4" />
+            <Button HeightRequest="40" WidthRequest="150" Text="Title" Clicked="Button_Clicked_11" />
+            <Button HeightRequest="40" WidthRequest="150" Text="Duration" Clicked="Button_Clicked_13" />
+
+            <Button HeightRequest="40" WidthRequest="150" Text="TextColor" Clicked="Button_Clicked_14" />
+            <Button HeightRequest="40" WidthRequest="150" Text="Margin" Clicked="Button_Clicked_15" />
+            <Button HeightRequest="40" WidthRequest="150" Text="Font-Background" Clicked="Button_Clicked_16" />
+
+        </StackLayout>
+        <StackLayout Grid.Column="3" Grid.Row="0">
+            <Button HeightRequest="40" WidthRequest="150" Text="ValueMemberPath" Clicked="Button_Clicked_17" />
+            <Button HeightRequest="40" WidthRequest="150" Text="CenterView" Clicked="Button_Clicked_18" />
         </StackLayout>
     </Grid>
 

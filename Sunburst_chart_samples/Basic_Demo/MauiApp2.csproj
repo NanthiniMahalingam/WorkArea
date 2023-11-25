@@ -53,7 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Sunburst_Chart\Tooltip-implementation\maui-sunburstchart\maui\src\sunburstchart\Syncfusion.Maui.SunburstChart.csproj" />
+	  <ProjectReference Include="..\..\..\..\Datalabel_Dynamic_update\maui-sunburstchart\maui\src\sunburstchart\Syncfusion.Maui.SunburstChart.csproj" />
 	</ItemGroup>
 
 </Project>
