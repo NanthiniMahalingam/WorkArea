@@ -1,5 +1,6 @@
 ﻿using Syncfusion.Maui.SunburstChart;
 using System.Collections.ObjectModel;
+using System.Data.Common;
 using System.Globalization;
 
 namespace MauiApp2;
@@ -11,6 +12,8 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+
+      
         Brush1 = new List<Brush>()
 {
     new SolidColorBrush(Color.FromArgb("#36b200")),
@@ -65,6 +68,7 @@ public partial class MainPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
+        sunburstChart.AnimationDuration = 5;
         sunburstChart.ItemsSource = Data;
     }
 
@@ -148,23 +152,23 @@ public partial class MainPage : ContentPage
     private void Button_Clicked_3(object sender, EventArgs e)
     {
 
-        dataLabel.RotationMode = SunburstLabelRotationMode.Normal;
+      //  dataLabel.RotationMode = SunburstLabelRotationMode.Normal;
 
        
     }
 
     private void Button_Clicked_4(object sender, EventArgs e)
     {
-        // dataLabel.RotationMode = SunburstLabelRotationMode.Normal;
+        dataLabel.RotationMode = SunburstLabelRotationMode.Normal;
         dataLabel.FontAttributes = FontAttributes.Bold;
         dataLabel.FontSize = 12;
-        // dataLabel.FontFamily = "Calibri";
+        //// dataLabel.FontFamily = "Calibri";
         dataLabel.TextColor = Colors.Black;
     }
 
     private void Button_Clicked_5(object sender, EventArgs e)
     {
-        sunburstChart.Levels[0].GroupMemberPath = "JobRole";
+        sunburstChart.Levels[0].GroupMemberPath = "JobGroup";
     }
 
     private void Button_Clicked_6(object sender, EventArgs e)
@@ -211,7 +215,7 @@ public partial class MainPage : ContentPage
 
     private void Button_Clicked_14(object sender, EventArgs e)
     {
-        toolTip.TextColor = Colors.Green;
+        toolTip.TextColor = Colors.Black;
     }
 
     private void Button_Clicked_15(object sender, EventArgs e)
@@ -234,20 +238,79 @@ public partial class MainPage : ContentPage
     private void Button_Clicked_18(object sender, EventArgs e)
     {
         Label label = new Label();
-        label.Text = "Center                              View";
-       
-       
+        label.Text = "Center View";
+
+
         StackLayout layout = new StackLayout();
-        layout.Background = Brush.Green;
-        layout.Orientation = StackOrientation.Vertical;
+        // layout.Background = Brush.Green;
         layout.HorizontalOptions = LayoutOptions.CenterAndExpand;
         layout.VerticalOptions = LayoutOptions.CenterAndExpand;
-       
-        layout.SetBinding(HeightRequestProperty, nameof(SfSunburstChart.CenterHoleSize),converter: grid.Resources["Radius"] as IValueConverter);
-        layout.SetBinding(WidthRequestProperty, nameof(SfSunburstChart.CenterHoleSize), converter: grid.Resources["Radius"] as IValueConverter);
-        layout.Children.Add(label);
 
-       sunburstChart.CenterView = layout;
+        // image source
+
+
+        Image image = new Image();
+        image.Source = "image.png";
+        image.HorizontalOptions = LayoutOptions.CenterAndExpand;
+        image.VerticalOptions = LayoutOptions.CenterAndExpand;
+
+        //image.SetBinding(HeightRequestProperty, nameof(SfSunburstChart.CenterHoleSize));
+        //image.SetBinding(WidthRequestProperty, nameof(SfSunburstChart.CenterHoleSize));
+
+        image.SetBinding(HeightRequestProperty, new Binding() { Path = "CenterHoleSize", Source = sunburstChart, Converter = grid.Resources["cornerRadius"] as IValueConverter });
+        image.SetBinding(WidthRequestProperty, new Binding() { Path = "CenterHoleSize", Source = sunburstChart, Converter = grid.Resources["cornerRadius"] as IValueConverter });
+
+
+        layout.Children.Add(image);
+
+        sunburstChart.CenterView = layout;
+    }
+
+    private void Button_Clicked_19(object sender, EventArgs e)
+    {
+        SunburstHierarchicalLevel sunburstHierarchicalLevel = new SunburstHierarchicalLevel();
+        sunburstHierarchicalLevel.GroupMemberPath = "JobGroup";
+        sunburstChart.Levels.Add(sunburstHierarchicalLevel);
+    }
+    
+    private void Button_Clicked_20(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new NewPage1());
+    }
+
+    private void Button_Clicked_21(object sender, EventArgs e)
+    {
+        sunburstChart.DataLabelSettings = new SunburstDataLabelSettings() { FontAttributes = FontAttributes.Italic};
+    }
+
+    private void Button_Clicked_22(object sender, EventArgs e)
+    {
+        sunburstChart.TooltipSettings = new SunburstTooltipSettings() { };
+    }
+
+    private void Button_Clicked_23(object sender, EventArgs e)
+    {
+        sunburstChart.Legend = new SunburstLegend() { Placement = Syncfusion.Maui.Core.LegendPlacement.Right };
+    }
+
+    private void Button_Clicked_24(object sender, EventArgs e)
+    {
+        sunburstChart.TooltipTemplate = grid.Resources["template"] as DataTemplate;
+    }
+
+    private void Button_Clicked_25(object sender, EventArgs e)
+    {
+        sunburstChart.TooltipTemplate = null; 
+    }
+
+    private void Button_Clicked_26(object sender, EventArgs e)
+    {
+        legend.IsVisible = true;
+    }
+
+    private void Button_Clicked_27(object sender, EventArgs e)
+    {
+        legend.IsVisible = false;
     }
 }
 
@@ -268,37 +331,37 @@ public class SunburstViewModel
     public SunburstViewModel()
     {
         this.DataSource = new ObservableCollection<SunburstModel>
-          {
-              new SunburstModel { Country = "USA", JobDescription = "Sales", JobGroup="Executive", EmployeesCount = double.NaN, Count = 30 },
-              new SunburstModel { Country = "USA", JobDescription = "Sales", JobGroup = "Analyst", EmployeesCount = double.NaN , Count = 100 },
-              new SunburstModel { Country = "USA", JobDescription = "Marketing", EmployeesCount = 40, Count = 300 },
-              new SunburstModel { Country = "USA", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = double.NaN, Count = 340 },
-              new SunburstModel { Country = "USA", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 175, Count = 300 },
-              new SunburstModel { Country = "USA", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 70 , Count = 550},
-              new SunburstModel { Country = "USA", JobDescription = "Management", EmployeesCount = 40 ,Count = double.NaN},
-              new SunburstModel { Country = "USA", JobDescription = "Accounts", EmployeesCount = 60, Count = 398 },
+            {
+                new SunburstModel { Country = "USA", JobDescription = "Sales", JobGroup="Executive", EmployeesCount = 50 , Count = 200},
+                new SunburstModel { Country = "USA", JobDescription = "Sales", JobGroup = "Analyst", EmployeesCount = 40 },
+                new SunburstModel { Country = "USA", JobDescription = "Marketing", EmployeesCount = 40 },
+                new SunburstModel { Country = "USA", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = 35 },
+                new SunburstModel { Country = "USA", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 175 },
+                new SunburstModel { Country = "USA", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 70 },
+                new SunburstModel { Country = "USA", JobDescription = "Management", EmployeesCount = 40 },
+                new SunburstModel { Country = "USA", JobDescription = "Accounts", EmployeesCount = 60 },
 
-              //new SunburstModel { Country = "India", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = 33 },
-              //new SunburstModel { Country = "India", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 125 },
-              //new SunburstModel { Country = "India", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 60 },
-              //new SunburstModel { Country = "India", JobDescription = "HR Executives", EmployeesCount = 70 },
-              //new SunburstModel { Country = "India", JobDescription = "Accounts", EmployeesCount = 45 },
+                new SunburstModel { Country = "India", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = 33 },
+                new SunburstModel { Country = "India", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 125 },
+                new SunburstModel { Country = "India", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 60 },
+                new SunburstModel { Country = "India", JobDescription = "HR Executives", EmployeesCount = 70 },
+                new SunburstModel { Country = "India", JobDescription = "Accounts", EmployeesCount = 45 },
 
-              //new SunburstModel { Country = "Germany", JobDescription = "Sales", JobGroup = "Executive", EmployeesCount = 30 },
-              //new SunburstModel { Country = "Germany", JobDescription = "Sales", JobGroup = "Analyst", EmployeesCount = 40 },
-              //new SunburstModel { Country = "Germany", JobDescription = "Marketing", EmployeesCount = 50 },
-              //new SunburstModel { Country = "Germany", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = 40 },
-              //new SunburstModel { Country = "Germany", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 65 },
-              //new SunburstModel { Country = "Germany", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 27 },
-              //new SunburstModel { Country = "Germany", JobDescription = "Management", EmployeesCount = 33 },
-              //new SunburstModel { Country = "Germany", JobDescription = "Accounts", EmployeesCount = 55 },
+                new SunburstModel { Country = "Germany", JobDescription = "Sales", JobGroup = "Executive", EmployeesCount = 30 },
+                new SunburstModel { Country = "Germany", JobDescription = "Sales", JobGroup = "Analyst", EmployeesCount = 40 },
+                new SunburstModel { Country = "Germany", JobDescription = "Marketing", EmployeesCount = 50 },
+                new SunburstModel { Country = "Germany", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = 40 },
+                new SunburstModel { Country = "Germany", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 65 },
+                new SunburstModel { Country = "Germany", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 27 },
+                new SunburstModel { Country = "Germany", JobDescription = "Management", EmployeesCount = 33 },
+                new SunburstModel { Country = "Germany", JobDescription = "Accounts", EmployeesCount = 55 },
 
-              //new SunburstModel { Country = "UK", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = 25 },
-              //new SunburstModel { Country = "UK", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 96 },
-              //new SunburstModel { Country = "UK", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 55 },
-              //new SunburstModel { Country = "UK", JobDescription = "HR Executives", EmployeesCount = 60 },
-              //new SunburstModel { Country = "UK", JobDescription = "Accounts", EmployeesCount = 30 }
-          };
+                new SunburstModel { Country = "UK", JobDescription = "Technical", JobGroup = "Testers", EmployeesCount = 25 },
+                new SunburstModel { Country = "UK", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Windows", EmployeesCount = 96 },
+                new SunburstModel { Country = "UK", JobDescription = "Technical", JobGroup = "Developers", JobRole = "Web", EmployeesCount = 55 },
+                new SunburstModel { Country = "UK", JobDescription = "HR Executives", EmployeesCount = 60 },
+                new SunburstModel { Country = "UK", JobDescription = "Accounts", EmployeesCount = 30 }
+            };
 
         Brush2 = new ObservableCollection<Brush>()
       {
