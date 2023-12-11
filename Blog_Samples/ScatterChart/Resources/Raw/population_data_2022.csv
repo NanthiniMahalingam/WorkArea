@@ -1,0 +1,235 @@
+country,pop2022,cca2
+India,1417173173,IN
+China,1425887337,CN
+United States,338289857,US
+Indonesia,275501339,ID
+Pakistan,235824862,PK
+Nigeria,218541212,NG
+Brazil,215313498,BR
+Bangladesh,171186372,BD
+Russia,144713314,RU
+Mexico,127504125,MX
+Ethiopia,123379924,ET
+Japan,123951692,JP
+Philippines,115559009,PH
+Egypt,110990103,EG
+DR Congo,99010212,CD
+Vietnam,98186856,VN
+Iran,88550570,IR
+Turkey,85341241,TR
+Germany,83369843,DE
+Thailand,71697030,TH
+United Kingdom,67508936,GB
+Tanzania,65497748,TZ
+France,64626628,FR
+South Africa,59893885,ZA
+Italy,59037474,IT
+Kenya,54027487,KE
+Myanmar,54179306,MM
+Colombia,51874024,CO
+South Korea,51815810,KR
+Uganda,47249585,UG
+Sudan,46874204,SD
+Spain,47558630,ES
+Argentina,45510318,AR
+Algeria,44903225,DZ
+Iraq,44496122,IQ
+Afghanistan,41128771,AF
+Poland,39857145,PL
+Canada,38454327,CA
+Morocco,37457971,MA
+Saudi Arabia,36408820,SA
+Ukraine,39701739,UA
+Angola,35588987,AO
+Uzbekistan,34627652,UZ
+Yemen,33696614,YE
+Peru,34049588,PE
+Malaysia,33938221,MY
+Ghana,33475870,GH
+Mozambique,32969518,MZ
+Nepal,30547580,NP
+Madagascar,29611714,MG
+Ivory Coast,28160542,CI
+Venezuela,28301696,VE
+Cameroon,27914536,CM
+Niger,26207977,NE
+Australia,26177413,AU
+North Korea,26069416,KP
+Taiwan,23893394,TW
+Mali,22593590,ML
+Burkina Faso,22673762,BF
+Syria,22125249,SY
+Sri Lanka,21832143,LK
+Malawi,20405317,MW
+Zambia,20017675,ZM
+Romania,19659267,RO
+Chile,19603733,CL
+Kazakhstan,19397998,KZ
+Chad,17723315,TD
+Ecuador,18001000,EC
+Somalia,17597511,SO
+Guatemala,17843908,GT
+Senegal,17316449,SN
+Netherlands,17564014,NL
+Cambodia,16767842,KH
+Zimbabwe,16320537,ZW
+Guinea,13859341,GN
+Rwanda,13776698,RW
+Benin,13352864,BJ
+Burundi,12889576,BI
+Tunisia,12356117,TN
+Bolivia,12224110,BO
+Haiti,11584996,HT
+Belgium,11655930,BE
+Jordan,11285869,JO
+Dominican Republic,11228821,DO
+Cuba,11212191,CU
+South Sudan,10913164,SS
+Sweden,10549347,SE
+Honduras,10432860,HN
+Czech Republic,10493986,CZ
+Azerbaijan,10358074,AZ
+Greece,10384971,GR
+Papua New Guinea,10142619,PG
+Portugal,10270865,PT
+Hungary,9967308,HU
+Tajikistan,9952787,TJ
+United Arab Emirates,9441129,AE
+Belarus,9534954,BY
+Israel,9038309,IL
+Togo,8848699,TG
+Austria,8939617,AT
+Switzerland,8740472,CH
+Sierra Leone,8605718,SL
+Laos,7529475,LA
+Hong Kong,7488865,HK
+Serbia,7221365,RS
+Nicaragua,6948392,NI
+Libya,6812341,LY
+Paraguay,6780744,PY
+Kyrgyzstan,6630623,KG
+Bulgaria,6781953,BG
+Turkmenistan,6430770,TM
+El Salvador,6336392,SV
+Republic of the Congo,5970424,CG
+Singapore,5975689,SG
+Denmark,5882261,DK
+Slovakia,5643453,SK
+Central African Republic,5579144,CF
+Finland,5540745,FI
+Norway,5434319,NO
+Liberia,5302681,LR
+Palestine,5250072,PS
+Lebanon,5489739,LB
+New Zealand,5185288,NZ
+Costa Rica,5180829,CR
+Ireland,5023109,IE
+Mauritania,4736139,MR
+Oman,4576298,OM
+Panama,4408581,PA
+Kuwait,4268873,KW
+Croatia,4030358,HR
+Eritrea,3684032,ER
+Georgia,3744385,GE
+Mongolia,3398366,MN
+Moldova,3272996,MD
+Uruguay,3422794,UY
+Puerto Rico,3252407,PR
+Bosnia and Herzegovina,3233526,BA
+Albania,2842321,AL
+Jamaica,2827377,JM
+Armenia,2780469,AM
+Gambia,2705992,GM
+Lithuania,2750055,LT
+Qatar,2695122,QA
+Botswana,2630296,BW
+Namibia,2567012,NA
+Gabon,2388992,GA
+Lesotho,2305825,LS
+Guinea-Bissau,2105566,GW
+Slovenia,2119844,SI
+North Macedonia,2093599,MK
+Latvia,1850651,LV
+Equatorial Guinea,1674908,GQ
+Trinidad and Tobago,1531044,TT
+Bahrain,1472233,BH
+Timor-Leste,1341296,TL
+Estonia,1326062,EE
+Mauritius,1299469,MU
+Cyprus,1251488,CY
+Eswatini,1201670,SZ
+Djibouti,1120849,DJ
+Reunion,974052,RE
+Fiji,929766,FJ
+Comoros,836774,KM
+Guyana,808726,GY
+Bhutan,782455,BT
+Solomon Islands,724273,SB
+Macau,695168,MO
+Luxembourg,647599,LU
+Montenegro,627082,ME
+Suriname,618040,SR
+Cape Verde,593149,CV
+Western Sahara,575986,EH
+Malta,533286,MT
+Maldives,523787,MV
+Brunei,449002,BN
+Bahamas,409984,BS
+Belize,405272,BZ
+Guadeloupe,395752,GP
+Iceland,372899,IS
+Martinique,367507,MQ
+Mayotte,326101,YT
+Vanuatu,326740,VU
+French Guiana,304557,GF
+French Polynesia,306279,PF
+New Caledonia,289950,NC
+Barbados,281635,BB
+Sao Tome and Principe,227380,ST
+Samoa,222382,WS
+Curacao,191163,CW
+Saint Lucia,179857,LC
+Guam,171774,GU
+Kiribati,131232,KI
+Grenada,125438,GD
+Micronesia,114164,FM
+Jersey,110778,JE
+Tonga,106858,TO
+Seychelles,107118,SC
+Aruba,106445,AW
+Saint Vincent and the Grenadines,103948,VC
+United States Virgin Islands,99465,VI
+Antigua and Barbuda,93763,AG
+Isle of Man,84519,IM
+Andorra,79824,AD
+Dominica,72737,DM
+Cayman Islands,68706,KY
+Bermuda,64184,BM
+Guernsey,63301,GG
+Greenland,56466,GL
+Faroe Islands,53090,FO
+Northern Mariana Islands,49551,MP
+Saint Kitts and Nevis,47657,KN
+Turks and Caicos Islands,45703,TC
+Sint Maarten,44175,SX
+American Samoa,44273,AS
+Marshall Islands,41569,MH
+Liechtenstein,39327,LI
+Monaco,36469,MC
+San Marino,33660,SM
+Gibraltar,32649,GI
+Saint Martin,31791,MF
+British Virgin Islands,31305,VG
+Palau,18055,PW
+Cook Islands,17011,CK
+Anguilla,15857,AI
+Nauru,12668,NR
+Wallis and Futuna,11572,WF
+Tuvalu,11312,TV
+Saint Barthelemy,10967,BL
+Saint Pierre and Miquelon,5862,PM
+Montserrat,4390,MS
+Falkland Islands,3780,FK
+Niue,1934,NU
+Tokelau,1871,TK
+Vatican City,510,VA
